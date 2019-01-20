@@ -5,6 +5,10 @@ body, a{
     color: white;
 }
 
+nav a {
+    font-size: 2em;
+}
+
 nav {
     background-color: #66B9BF
 }
@@ -14,10 +18,20 @@ a:hover {
     color: white;
 }
 
+#image {
+    height: 18rem;
+    margin: 1rem;
+}
+
 .presentation-banner {
     margin: 1rem 0rem 0rem 0rem;
     height: 20rem;
     background-color: #EEAA7B;
+}
+
+.descriptive-text {
+    padding: 3rem;    
+    font-size: 2rem;
 }
 
 .menu-options {
@@ -28,6 +42,14 @@ a:hover {
 .options {
     background-color: #07889B;
     height: 15rem;
+}
+
+#assignment-list {
+    background-color: #07889B;
+}
+
+#assignment-list-header {
+    background-color: #EEAA7B;
 }
 
 .option-titles {
