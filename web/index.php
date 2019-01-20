@@ -16,7 +16,7 @@
 </head>
 <body>
     
-    <?php echo 'hello';  ?>
+    <?php echo "<h2>PHP is Fun!</h2>";  ?>
 
     <div class ="card-deck">
         <div class ="card presentation-banner">
