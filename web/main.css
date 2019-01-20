@@ -1,0 +1,50 @@
+/*Style Credit goes to: https://www.canva.com/learn/website-color-schemes/ See #4, 04. Modern and Clean*/
+
+
+body, a{
+    color: white;
+}
+
+nav {
+    background-color: #66B9BF
+}
+
+a:hover {
+    font-weight: bold;
+    color: white;
+}
+
+.presentation-banner {
+    margin: 1rem 0rem 0rem 0rem;
+    height: 20rem;
+    background-color: #EEAA7B;
+}
+
+.menu-options {
+    margin: 1rem 0rem 0rem 0rem;
+    /* background-color: #E37222; */
+}
+
+.options {
+    background-color: #07889B;
+    height: 15rem;
+}
+
+.option-titles {
+    transform: rotate(-20deg);
+    text-decoration: underline;
+    font-size: 2.5em;
+    text-align: center;
+    margin: auto;
+    font-weight: normal;
+}
+
+/*Got the following trick from: https://stackoverflow.com/a/4753609*/
+.outer-center {
+    width: 100%;
+    text-align: center;
+}
+
+.inner-center {
+    display: inline-block;
+}
