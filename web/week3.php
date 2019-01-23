@@ -17,12 +17,20 @@
                     echo "<input type='radio' name='major' value='WDD'> Web Design and Development<br>";
                     echo "<input type='radio' name='major' value='CIT'> Computer Information Technology<br>";
                     echo "<input type='radio' name='major' value='CE'> Computer Engineering<br>";
+                    echo "<textarea rows='4' cols='50' name='comment' form='form'>";
+                    echo "Enter comment here...</textarea>";
+                    echo "<input type='checkbox' name='continent[]' value='NA'>";
+                    echo "<input type='checkbox' name='continent[]' value='SA'>";
+                    echo "<input type='checkbox' name='continent[]' value='EU'>";
+                    echo "<input type='checkbox' name='continent[]' value='AS'>";
+                    echo "<input type='checkbox' name='continent[]' value='AU'>";
+                    echo "<input type='checkbox' name='continent[]' value='AF'>";
+                    echo "<input type='checkbox' name='continent[]' value='AN'>";
+
                     echo "<input type='submit'>";
                 echo "</form>";
             
-                echo "<br>";
-                echo "<textarea rows='4' cols='50' name='comment' form='form'>";
-                echo "Enter comment here...</textarea>";
+
                 
             ?>
     </body>

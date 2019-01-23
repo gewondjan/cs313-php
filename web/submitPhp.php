@@ -9,7 +9,16 @@
     <p>Your Major is: <?php echo $_POST["major"]; ?></p>
 
     <p>Your Comments: <?php echo $_POST["comment"]; ?> </p>
+    
     <ul>
+        <?php
+            $continents = $_POST["continent"];
+            foreach ($continents as $continent) {
+                $newcontinent = htmlspecialchars($continent);
+                echo "<li> $newcontinent </li>";
+            }
+            
+        ?>
     </ul>
 
     </body>
