@@ -19,13 +19,14 @@
                     echo "<input type='radio' name='major' value='CE'> Computer Engineering<br>";
                     echo "<textarea rows='4' cols='50' name='comment' form='form'>";
                     echo "Enter comment here...</textarea>";
-                    echo "<input type='checkbox' name='continent[]' value='NA'>";
-                    echo "<input type='checkbox' name='continent[]' value='SA'>";
-                    echo "<input type='checkbox' name='continent[]' value='EU'>";
-                    echo "<input type='checkbox' name='continent[]' value='AS'>";
-                    echo "<input type='checkbox' name='continent[]' value='AU'>";
-                    echo "<input type='checkbox' name='continent[]' value='AF'>";
-                    echo "<input type='checkbox' name='continent[]' value='AN'>";
+                    echo "<br>";
+                    echo "<input type='checkbox' name='continent[]' value='NA'> North America<br>";
+                    echo "<input type='checkbox' name='continent[]' value='SA'> South America <br>";
+                    echo "<input type='checkbox' name='continent[]' value='EU'> Europe <br>";
+                    echo "<input type='checkbox' name='continent[]' value='AS'> Asia <br>";
+                    echo "<input type='checkbox' name='continent[]' value='AU'> Australia <br>";
+                    echo "<input type='checkbox' name='continent[]' value='AF'> Africa <br>";
+                    echo "<input type='checkbox' name='continent[]' value='AN'> Antarctica <br>";
 
                     echo "<input type='submit'>";
                 echo "</form>";

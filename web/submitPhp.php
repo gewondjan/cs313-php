@@ -12,10 +12,14 @@
     
     <ul>
         <?php
+
             $continents = $_POST["continent"];
+            $continentMap = array('NA' => 'North America', 'SA' => 'South America',
+            'AU' => 'Australia', 'EU' => 'Europe', 'AF' => 'Africa', 'AN' => 'Antarctica', 'AS' => 'Asia');
             foreach ($continents as $continent) {
                 $newcontinent = htmlspecialchars($continent);
-                echo "<li> $newcontinent </li>";
+                echo "<li> $continentMap[$newcontinent] </li>";
+
             }
             
         ?>
