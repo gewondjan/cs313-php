@@ -17,7 +17,7 @@
                     echo "<input type='radio' name='major' value='WDD'> Web Design and Development<br>";
                     echo "<input type='radio' name='major' value='CIT'> Computer Information Technology<br>";
                     echo "<input type='radio' name='major' value='CE'> Computer Engineering<br>";
-                    echo "<input type='submit'>"
+                    echo "<input type='submit'>";
                 echo "</form>";
             
                 echo "<br>";
