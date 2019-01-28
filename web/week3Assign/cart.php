@@ -2,23 +2,16 @@
 <html>
 <head>
     <title>Shopping Cart</title>
-
 </head>
-
 <body>
-<h1>Welcome to Cereal Delivery</h1>
-<h2>For the moments when you are in need of a bowl of cereal.</h2>
-<br>
-<h3>Choose from our wide selection of cereals.</h3>
 
-
-<form action="<?php $_SERVER["PHP_SELF"] ?>">
-
-
-    <input type="submit" value="Add to Cart">
-</form>
-
-
+    <?php
+        $cereal_array = $_SESSION["cereal_array"];
+        $cereals_checked = $_SESSION["cereals_checked"];
+        foreach($cereals_checked as $cereal){
+            echo "<h1>$cereal_array['$cereal']</h1>";
+        }
+    ?>
 
 </body>
 </html>
