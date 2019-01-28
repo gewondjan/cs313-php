@@ -23,8 +23,7 @@
                 </div>
                 <div class="card-body" id="assignment-list">
                     <ol>
-                        <li>First Assignment Goes Here</li>
-                        <li>Second Assignment Goes Here</li>
+                        <li><a href="/week3Assign/browse.php">Shopping Cart App</a></li>
                     </ol>
                 </div>
             </div>
