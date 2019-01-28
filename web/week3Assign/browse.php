@@ -20,7 +20,7 @@
                         "HBO" => "Honey Bunches of Oats", "T" => "Trix", "FL" => "Fruit Loops", "FF" => "Frosted Flakes",
                         "FP" => "Fruity Pebbles");
        
-        if (!isset($_SESSION["cereal_array"]) {
+        if (!isset($_SESSION["cereal_array"])) {
             $_SESSION["cereal_array"] = $cereals;
         }        
         if (isset($_POST['cereals_checked'])) {
