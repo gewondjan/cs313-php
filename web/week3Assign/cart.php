@@ -11,6 +11,8 @@
         foreach($cereals_checked as $cereal){
             echo "<h1>$cereal_array[$cereal]</h1>";
         }
+        echo "<p>$cereal_array['LC']</p>"
+
     ?>
 
 </body>
