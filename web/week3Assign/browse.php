@@ -29,7 +29,7 @@
         }
 
         foreach ($cereals as $cereal_id => $cereal_name){
-            echo "<input type='checkbox' name='cereals_checked[]' value='$cereal_id'><span>$cereal_name</span>";
+            echo "<input type='checkbox' name='cereals_checked[]' value='$cereal_id'><span>$cereal_name</span><br>";
             //echo "<input list='numbers$cereal_id'><datalist id='numbers$cereal_id'><option value='1'><option value='2'><option value='3'><option value='4'></datalist><br>";
         }
     ?>
