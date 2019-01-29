@@ -22,7 +22,8 @@
        
         if (!isset($_SESSION["cereal_array"])) {
             $_SESSION["cereal_array"] = $cereals;
-        }        
+        }
+               
         if (isset($_POST['cereals_checked'])) {
             $_SESSION['cereals_checked'] = $_POST['cereals_checked'];
         }
