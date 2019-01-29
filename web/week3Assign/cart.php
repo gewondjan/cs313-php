@@ -40,7 +40,7 @@
         }
 
         ?>
-        <input type='submit'>Remove Selected Items</button>
+        <input type='submit' value='Remove Selected Items'>
 
 </form>
 <a href='browse.php'>Keep Shopping</a>
