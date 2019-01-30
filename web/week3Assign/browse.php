@@ -28,7 +28,7 @@
         if (isset($_POST['cereals_checked'])) {
             $_SESSION['cereals_checked'] = $_POST['cereals_checked'];
             
-            // $master_cereal_list = (isset($_SESSION['master_cereal_list']) ? $_SESSION['master_cereal_list'] : array());
+            $master_cereal_list = (isset($_SESSION['master_cereal_list']) ? $_SESSION['master_cereal_list'] : array());
             // foreach($_SESSION['cereals_checked'] as $cereal_id) {
             //     $temp = new Cereal();
             //     $temp->name = $cereals[$cereal_id];
@@ -37,7 +37,7 @@
             //     $master_cereal_list[$cereal_id] = $temp;
             // }        
 
-            // $_SESSION['master_cereal_list'] = $master_cereal_list;
+            $_SESSION['master_cereal_list'] = $master_cereal_list;
 
         }
 
