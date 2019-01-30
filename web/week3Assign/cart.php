@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'Cereal.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +13,10 @@
 <h1>Shopping Cart</h1>
 <form method='post' action='<?php $_SERVER["PHP_SELF"];  ?>'>
     <?php
-
+        
         $cereal_array = $_SESSION["cereal_array"];
         $cereals_checked = $_SESSION["cereals_checked"];
+        $master_cereal_list = $_SESSION["master_cereal_list"];
         $final_cereal_list = array();
         if (isset($_POST['remove'])) {
             $remove_list = $_POST['remove'];
@@ -36,7 +38,7 @@
         $_SESSION["cereals_checked"] = $final_cereal_list;
 
         foreach($final_cereal_list as $cereal) {
-            echo "<input type='checkbox' name='remove[]' value='$cereal'><span>$cereal_array[$cereal]</span><br>";
+            echo "<input type='checkbox' name='remove[]' value='$cereal'><span>" . $master_cereal_list[$cereal]->count . " " . $master_cereal_list[$cereal]->name . "</span><br>";
         }
 
         ?>

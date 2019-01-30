@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'Cereal.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
 <br>
 <label for='states'>State</label>
 <input list='states' name='state'>
-<datalist id='states' name='state'>
+<datalist id='states'>
 <option value='AL'>
 <option value='AK'>
 <option value='AZ'>

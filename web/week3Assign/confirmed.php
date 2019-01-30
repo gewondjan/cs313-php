@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    include 'Cereal.php';
 
 ?>
 
@@ -21,7 +22,7 @@
             ?>
     </ul>
     <h2>To be shipped to: </h2>
-    <h4><? echo $_POST["addressLine"]. $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
+    <h4><? echo $_POST["addressLine"] . "\n" . $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
     <h1>Enjoy your Cereal!</h1>
     
 </body>
