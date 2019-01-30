@@ -13,13 +13,13 @@
 <form method='post' action='confirmed.php'>
 <label for='orderName'>Order Name</label>
 <input type='text' id='orderName' name='orderName'>
-
+<br>
 <label for='addressLine'>Street Address</label>
 <input type='text' id='addressLine' name='addressLine'>
-
+<br>
 <label for='city'>City</label>
 <input type='text' id='city' name='city'>
-
+<br>
 <label for='states'>State</label>
 <input list='states'>
 <datalist id='states' name='state'>
@@ -74,12 +74,13 @@
 <option value='WI'>
 <option value='WY'>
 </datalist>
-
+<br>
 <label for='zip'>Zip Code</label>
 <input type='text' id='zip' name='zip'>
-
+<br>
 <input type='submit' value='Complete Purchase'>
 </form>
+<br>
 <a href="cart.php">Go Back to Cart</a>
 </body>
 </html>

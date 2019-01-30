@@ -10,7 +10,7 @@
     <title>Order Confirmation Page</title>
 </head>
 <body>
-    <h1>Congratulations, <?php $_POST["orderName"]; ?>! Your Order has been confirmed!</h1>
+    <h1>Congratulations, <?php echo $_POST["orderName"]; ?>! Your Order has been confirmed!</h1>
     <h2>The following items are on their way</h2>
     <ul>
         <?php
@@ -21,8 +21,8 @@
             ?>
     </ul>
     <h2>To be shipped to: </h2>
-    <h4><? $_POST["addressLine"]; ?></h4>
-    <h4><? $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
+    <h4><? echo $_POST["addressLine"]; ?></h4>
+    <h4><? echo $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
 
     <h1>Enjoy your Cereal!</h1>
     
