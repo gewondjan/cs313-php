@@ -21,7 +21,7 @@
 <input type='text' id='city' name='city'>
 <br>
 <label for='states'>State</label>
-<input list='states'>
+<input list='states' name='state'>
 <datalist id='states' name='state'>
 <option value='AL'>
 <option value='AK'>

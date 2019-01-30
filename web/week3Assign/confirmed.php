@@ -21,9 +21,7 @@
             ?>
     </ul>
     <h2>To be shipped to: </h2>
-    <h4><? echo $_POST["addressLine"]; ?></h4>
-    <h4><? echo $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
-
+    <h4><? echo $_POST["addressLine"]. $_POST["city"] . ', ' . $_POST["state"] . " " . $_POST["zip"]; ?></h4>
     <h1>Enjoy your Cereal!</h1>
     
 </body>
