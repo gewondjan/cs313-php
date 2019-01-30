@@ -28,16 +28,16 @@
         if (isset($_POST['cereals_checked'])) {
             $_SESSION['cereals_checked'] = $_POST['cereals_checked'];
             
-            $master_cereal_list = isset($_SESSION['master_cereal_list']) ? $_SESSION['master_cereal_list'] : array());
-            foreach($_SESSION['cereals_checked'] as $cereal_id) {
-                $temp = new Cereal();
-                $temp->name = $cereals[$cereal_id];
-                //If the quantity was specified for that particular cereal, then use that, but if not just use 1.
-                $temp->count = isset($_POST["number$cereal_id"]) ? $_POST["number$cereal_id"] : 1;
-                $master_cereal_list[$cereal_id] = $temp;
-            }        
+            // $master_cereal_list = (isset($_SESSION['master_cereal_list']) ? $_SESSION['master_cereal_list'] : array());
+            // foreach($_SESSION['cereals_checked'] as $cereal_id) {
+            //     $temp = new Cereal();
+            //     $temp->name = $cereals[$cereal_id];
+            //     //If the quantity was specified for that particular cereal, then use that, but if not just use 1.
+            //     $temp->count = isset($_POST["number$cereal_id"]) ? $_POST["number$cereal_id"] : 1;
+            //     $master_cereal_list[$cereal_id] = $temp;
+            // }        
 
-            $_SESSION['master_cereal_list'] = $master_cereal_list;
+            // $_SESSION['master_cereal_list'] = $master_cereal_list;
 
         }
 
