@@ -29,6 +29,7 @@
             $_SESSION['cereals_checked'] = $_POST['cereals_checked'];
             
             $master_cereal_list = (isset($_SESSION['master_cereal_list']) ? $_SESSION['master_cereal_list'] : array());
+            //NEED EITHER A CONSTRUCTOR OR SETTER FUNCTION
             // foreach($_SESSION['cereals_checked'] as $cereal_id) {
             //     $temp = new Cereal();
             //     $temp->name = $cereals[$cereal_id];

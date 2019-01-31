@@ -38,7 +38,7 @@
         $_SESSION["cereals_checked"] = $final_cereal_list;
 
         foreach($final_cereal_list as $cereal) {
-            echo "<input type='checkbox' name='remove[]' value='$cereal'><span>" . $master_cereal_list[$cereal]->count . " " . $master_cereal_list[$cereal]->name . "</span><br>";
+            echo "<input type='checkbox' name='remove[]' value='$cereal'><span>$cereal_array[$cereal]</span><br>";
         }
 
         ?>
