@@ -19,7 +19,7 @@
     
 
     
-     $db = new PDO("pgpsql:host=$dbHost;port=$dbPort;user=$dbUsername;password=$dbPassword;dbname=$dbname");
+     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;user=$dbUsername;password=$dbPassword;dbname=$dbname");
     
 //     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
     
