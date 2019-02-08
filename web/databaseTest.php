@@ -7,13 +7,15 @@ try {
     
     $dbParts = parse_url($url);
     
-    $dbPort = $dbParts['port'];
-    $dbHost = $dbParts['host'];
-    $dbname = ltrim($dbParts['path'], '/');
+    $dbPort = $dbParts["port"];
+    $dbHost = $dbParts["host"];
+    $dbname = ltrim($dbParts["path"], "/");
+    $dbUsername = $dbParts["user"];
+    $dbPassword = $dbParts["pass"];
     
 
     
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbParts['user'], $dbParts['pass']);
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbUsername, $dbPassword;
     
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
     
@@ -30,7 +32,7 @@ try {
 
 <body>
     <?php
-        $statement = $db->query('SELECT * from weather');
+        $statement = $db->query('SELECT city from weather');
         
         while($row = $statement->fetch(PDO::FETCH_ASSOC)){
             echo "<h1>" . $row['city'] . "</h1>";
