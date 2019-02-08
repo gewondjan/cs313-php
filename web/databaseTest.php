@@ -7,9 +7,13 @@ try {
     
     $dbParts = parse_url($url);
     
+    $dbPort = $dbParts['port'];
+    $dbHost = $dbParts['host'];
     $dbname = ltrim($dbParts['path'], '/');
     
-    $db = new PDO("psql:host=$dbParts['host'];port=$dbParts['port'];dbname=$dbname", $dbParts['user'], $dbParts['pass']);
+
+    
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbParts['user'], $dbParts['pass']);
     
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
     
