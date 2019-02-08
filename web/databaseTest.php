@@ -33,11 +33,11 @@ try {
 <body>
 <h2>Welcome</h2>
     <?php
-        $statement = $db->query('SELECT city from weather');
+        // $statement = $db->query('SELECT city from weather');
         
-        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            echo "<h1>" . $row['city'] . "</h1>";
-        }
+        // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        //     echo "<h1>" . $row['city'] . "</h1>";
+        // }
 
     ?>
 
