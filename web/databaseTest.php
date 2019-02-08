@@ -3,7 +3,7 @@
 
 try {
 
-    $url = getevn('DATABASE_URL');
+    $url = getenv('DATABASE_URL');
     
     $dbParts = parse_url($url);
     
