@@ -3,7 +3,7 @@
 
 try {
 
-    $url = getenv('DATABASE_URL');
+    $url = getenv("DATABASE_URL");
     
     $dbParts = parse_url($url);
     
@@ -31,6 +31,7 @@ try {
 </head>
 
 <body>
+<h2>Welcome</h2>
     <?php
         $statement = $db->query('SELECT city from weather');
         
