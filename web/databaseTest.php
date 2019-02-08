@@ -1,7 +1,7 @@
 
 <?php
 
-try {
+// try {
 
     $url = getenv("DATABASE_URL");
     
