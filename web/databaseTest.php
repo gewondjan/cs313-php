@@ -19,7 +19,7 @@
     
 
     
-//     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbUsername, $dbPassword);
+     $db = new PDO("pgpsql:host=$dbHost;port=$dbPort;user=$dbUsername;password=$dbPassword;dbname=$dbname");
     
 //     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
     
@@ -37,11 +37,11 @@
 <body>
 <h2>Welcome</h2>
     <?php
-        // $statement = $db->query('SELECT city from weather');
+        $statement = $db->query('SELECT city from weather');
         
-        // while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-        //     echo "<h1>" . $row['city'] . "</h1>";
-        // }
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+            echo "<h1>" . $row['city'] . "</h1>";
+        }
 
     ?>
 
