@@ -21,7 +21,7 @@ try {
     
 } catch (PDOException $exception) {
     echo "Error: " . $exception->getMessage();
-    die();
+    // die();
 }
 
 ?> 
