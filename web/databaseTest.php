@@ -21,7 +21,7 @@ try {
     
      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;user=$dbUsername;password=$dbPassword;dbname=$dbname");
     
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 } catch (PDOException $exception) {
     echo "Error: " . $exception->getMessage();
