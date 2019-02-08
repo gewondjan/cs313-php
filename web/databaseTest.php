@@ -12,17 +12,21 @@ try {
     $dbname = ltrim($dbParts["path"], "/");
     $dbUsername = $dbParts["user"];
     $dbPassword = $dbParts["pass"];
+
+    echo "port: " . $dbPort . " host: " . $dbHost . " name: " . $dbname . " Username: " . $dbUsername . " password: " . $dbPassword;
+
+
     
 
     
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbUsername, $dbPassword);
+//     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbname", $dbUsername, $dbPassword);
     
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
+//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERROMODE_EXCEPTION);
     
-} catch (PDOException $exception) {
-    echo "Error: " . $exception->getMessage();
-    // die();
-}
+// } catch (PDOException $exception) {
+//     echo "Error: " . $exception->getMessage();
+//     die();
+// }
 
 ?> 
 <!DOCTYPE html>
