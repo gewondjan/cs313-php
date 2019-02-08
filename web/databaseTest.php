@@ -1,5 +1,5 @@
 
-<?
+<?php
 
 try {
 
@@ -25,7 +25,7 @@ try {
 </head>
 
 <body>
-    <?
+    <?php
         $statement = $db->query('SELECT * from weather');
         
         while($row = $statement->fetch(PDO::FETCH_ASSOC)){
