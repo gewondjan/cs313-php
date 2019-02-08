@@ -33,7 +33,7 @@ try {
         $statement = $db->query('SELECT * from weather');
         
         while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            echo "<h1>$row['city']</h1>";
+            echo "<h1>" . $row['city'] . "</h1>";
         }
 
     ?>
