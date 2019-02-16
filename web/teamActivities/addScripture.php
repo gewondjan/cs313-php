@@ -34,7 +34,7 @@ catch (PDOException $ex)
   foreach($scripturesInDb as $scripture) {
     echo "<p>" . $scripture['book'] . " " . $scripture['chapter'] . ":" . $scripture['verse'] . "</p></b>";
     $topicisCorresponding = $db->prepare('SELECT * FROM scripture JOIN scripture_topic ON scripture_topic.scripture_id = scripture.scripture_id JOIN topic ON topic.topic_id = scripture_topic.topic_id WHERE scripture.scripture_id = :id');
-    $topicisCorresponding->bindValue(':id', $scripture['id'], PDO::PARAM_INT);
+    $topicisCorresponding->bindValue(':id', $scripture['scripture_id'], PDO::PARAM_INT);
     $topicisCorresponding->execute();
     $topicsForScripture = $topicisCorresponding->fetchALl(PDO::FETCH_ASSOC);
     echo "<ul>";
