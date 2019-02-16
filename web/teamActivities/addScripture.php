@@ -29,13 +29,12 @@ catch (PDOException $ex)
   <h1>Scriptures in System</h1>
   <?php
     $scripturesInDb = $db->query('SELECT * FROM scripture');
-    $foreach($scripturesInDb as $scripture) {
+    foreach($scripturesInDb as $scripture) {
       echo "<p>" . $scripture['book'] . "</p></b>";
 
     }
 
   ?>
-
 
   <h1>Add Scriptures</h1>
 
