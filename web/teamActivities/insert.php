@@ -38,34 +38,19 @@ catch (PDOException $ex)
 
     $newID = $db->lastInsertId('scripture_scripture_id_seq');
 
-    echo $newID;
 
-    //header("Location: addScripture.php");
+    foreach ($_POST['topics'] as $topic) {
+      $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id)
+        VALUES (:scripture_id, :topic_id)');
 
-//     foreach ($_POST['topics'] as $topic) {
-//       echo 'scripture_id: scripture_id, topic_id: topic_id';
-//       $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id)
-//         VALUES (:scripture_id, :topic_id)');
+        $stmt->bindValue(':topic_id', $topic, PDO::PARAM_INT);
+        $stmt->bindValue(':scripture_id', $newID, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 
-//         $stmt->bindValue(':topic_id', $topic);
-//         $stmt->bindValue(':scripture_id', $newID);
-//         $stmt->execute();
-//     }
+    
+    header("Location: addScripture.php");
 
-//     $stmt = $db->query('SELECT id, book, chapter, verse from scripture');
-
-//     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//      echo "<p>" . $row['book'] . $row['chapter'] . ":" . $row['verse'] . "<br>" . $row['content'] . "<br></p>";
-
-//     $nextStatement = $db->prepare('SELECT name FROM topic JOIN scripture_topic ON topic.topic_id = scripture_topic.topic_id WHERE scripture_topic.scripture_id = :scripture_id');
-
-//     $nextStatement->bindValue(":scripture_id", $row['id'], PDO::PARAM_INT);
-//     $nextStatement->execute();
-
-//     while ($listOfTopics = $nextStatement->fetch(PDO::FETCH_ASSOC)) {
-//       echo "<p>" . $listOfTopics['name'] . "</p> <br>";
-//     }
-// }
 ?>
 
 </body>
