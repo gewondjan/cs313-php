@@ -37,13 +37,11 @@ catch (PDOException $ex)
     $topicisCorresponding->bindValue(':id', $scripture['id'], PDO::PARAM_INT);
     $topicisCorresponding->execute();
     $topicsForScripture = $topicisCorresponding->fetchALl(PDO::FETCH_ASSOC);
-    if (count($topicsForScripture) != 0) {
     echo "<ul>";
     foreach($topicsForScripture as $topic) { 
       echo "<li>" . $topic['name'] . "</li>";
     }
     echo "</ul>";
-  }
 
   }
     
