@@ -1,13 +1,12 @@
 <?php
-// start session for getting scriptures details
-session_start();
-// local DB variable configurations
-$dbHost = 'localhost';
-$dbPort = '5432';
-$dbName = 'scripturesdb';
+
+$url = parse_url(getenv('DATABASE_URL'));
+
+$dbname = ltrim($url['path'], '/');
+
 try
 {
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName");
+  $db = new PDO("pgsql:host=$url['host'];port=$url['port'];dbname=$dbname", $url['user'], $url['pass']);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
