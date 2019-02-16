@@ -29,7 +29,7 @@ catch (PDOException $ex)
   <h1>Scriptures in System</h1>
   <?php
 
-  $scripturesStatment = $db->query('SELECT * FROM scripture');
+  $scripturesStatement = $db->query('SELECT * FROM scripture');
   $scripturesInDb = $scripturesStatement->fetchAll(PDO::FETCH_ASSOC);
   foreach($scripturesInDb as $scripture) {
     echo "<p>" . $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . "</p></b>";
