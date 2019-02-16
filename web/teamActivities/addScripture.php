@@ -61,7 +61,7 @@ catch (PDOException $ex)
       $stmt = $db->query('SELECT topic_id, name FROM topic');
 
       while ($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "<input type='checkbox' name='topics[]' value='" . "$row[topic_id]'> $row[name] <br>";
+        echo "<input type='checkbox' name='topics[]' value='" . $row[topic_id] . "'> $row[name] <br>";
       }
        ?>
     <input type="submit" />
