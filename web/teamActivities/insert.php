@@ -37,7 +37,7 @@ catch (PDOException $ex)
     $stmt->bindValue(':content', $_POST['content'], PDO::PARAM_STR);
     $stmt->execute();
 
-    $newID = $pdo->lastInsertId('scripture_scripture_id_seq');
+    $newID = $pdo->lastInsertId('scripture_id_seq');
 
     echo $newID;
 
