@@ -26,7 +26,6 @@ catch (PDOException $ex)
     <title>Scriptures DB</title>
 </head>
 <body>
-  <h1>Scripture Topics</h1>
 <?php
     $stmt = $db->prepare('INSERT INTO scripture (book, chapter, verse, content)
       VALUES (:book, :chapter, :verse, :content)');
@@ -37,9 +36,8 @@ catch (PDOException $ex)
     $stmt->bindValue(':content', $_POST['content'], PDO::PARAM_STR);
     $stmt->execute();
 
-    $newID = $db->lastInsertId();
+    $newID = $db->lastInsertId('scripture_scripture_id_seq');
 
-    echo $newID;
 
 
     //header("Location: addScripture.php");
