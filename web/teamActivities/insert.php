@@ -38,7 +38,7 @@ catch (PDOException $ex)
 
     $newID = $db->lastInsertId('scripture_scripture_id_seq');
 
-
+    echo $newID;
 
     //header("Location: addScripture.php");
 
