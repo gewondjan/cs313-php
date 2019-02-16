@@ -26,19 +26,30 @@ catch (PDOException $ex)
     <title>Scriptures DB</title>
 </head>
 <body>
-  <h1>Insert Scipture Topics</h1>
+  <h1>Scriptures in System</h1>
+  <?php
+    $scripturesInDb = $db->query('SELECT * FROM scripture');
+    $foreach($scripturesInDb as $scripture) {
+      echo "<p>" . $scripture['book'] . "</p></b>";
+
+    }
+
+  ?>
+
+
+  <h1>Add Scriptures</h1>
 
   <form method="post" action="insert.php">
-      <input type="text" name="book" placeholder="Enter the Book Name">
-      <input type="text" name="chapter" placeholder="Enter the Chapter Number">
-      <input type="text" name="verse" placeholder="Enter the Verse Number">
-      <textarea row="4" name="content" cols="50" placeholder="Enter Content Here"></textarea>
+      <input type="text" name="book" placeholder="Enter the Book Name"><br>
+      <input type="text" name="chapter" placeholder="Enter the Chapter Number"><br>
+      <input type="text" name="verse" placeholder="Enter the Verse Number"><br>
+      <textarea row="4" name="content" cols="50" placeholder="Enter Content Here"></textarea><br>
 
       <?php
       $stmt = $db->query('SELECT topic_id, name FROM topic');
 
       while ($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "<input type='checkbox' name='topics[]' value='" . "$row[topic_id]'> $row[name]";
+        echo "<input type='checkbox' name='topics[]' value='" . "$row[topic_id]'> $row[name] <br>";
       }
        ?>
     <input type="submit" />
