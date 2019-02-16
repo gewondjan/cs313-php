@@ -28,11 +28,26 @@ catch (PDOException $ex)
 <body>
   <h1>Scriptures in System</h1>
   <?php
-    $scripturesInDb = $db->query('SELECT * FROM scripture');
-    foreach($scripturesInDb as $scripture) {
-      echo "<p>" . $scripture['book'] . "</p></b>";
 
+  $scripturesStatment->query('SELECT * FROM scripture');
+  $scripturesInDb = $scripturesStatement->fetchAll(PDO::FETCH_ASSOC);
+  foreach($scripturesInDb as $scripture) {
+    echo "<p>" . $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . "</p></b>";
+    $topcisCorresponding = $db->prepare('SELECT * FROM scripture JOIN scripture_topic ON scripture_topic.scripture_id = scripture.scripture_id JOIN topic ON topic.topic_id = scripture_topic.topic_id WHERE scripture.scripture_id = :id');
+    $topcisCorresponding->bindValue(':id', $scripture['id'], PDO::PARAM_INT);
+    $topicsCorresponding->execute();
+    $topicsForScripture = $topcisCorresponding->fetchALl(PDO::FETCH_ASSOC);
+    if (count($topicsForScripture) != 0) {
+    echo "<ul>";
+    foreach($topicsForScripture as $topic) { 
+      echo "<li>$topic</li>";
     }
+    echo "</ul>";
+  }
+
+  }
+    
+
 
   ?>
 
