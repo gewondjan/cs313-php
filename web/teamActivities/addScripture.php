@@ -32,7 +32,7 @@ catch (PDOException $ex)
   $scripturesStatement = $db->query('SELECT * FROM scripture');
   $scripturesInDb = $scripturesStatement->fetchAll(PDO::FETCH_ASSOC);
   foreach($scripturesInDb as $scripture) {
-    echo "<p>" . $scripture['book'] . $scripture['chapter'] . $scripture['verse'] . "</p></b>";
+    echo "<p>" . $scripture['book'] . " " . $scripture['chapter'] . ":" . $scripture['verse'] . "</p></b>";
     $topicisCorresponding = $db->prepare('SELECT * FROM scripture JOIN scripture_topic ON scripture_topic.scripture_id = scripture.scripture_id JOIN topic ON topic.topic_id = scripture_topic.topic_id WHERE scripture.scripture_id = :id');
     $topicisCorresponding->bindValue(':id', $scripture['id'], PDO::PARAM_INT);
     $topicisCorresponding->execute();
@@ -40,7 +40,7 @@ catch (PDOException $ex)
     if (count($topicsForScripture) != 0) {
     echo "<ul>";
     foreach($topicsForScripture as $topic) { 
-      echo "<li>$topic</li>";
+      echo "<li>" . $topic['name'] . "</li>";
     }
     echo "</ul>";
   }
