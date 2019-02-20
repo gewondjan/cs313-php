@@ -36,7 +36,7 @@
             echo "hashedPassword: " . $hashedPassword;
         
         
-            $statement = $db->prepare('INSERT INTO teamActivity.users VALUES (:username, :password)');
+            $statement = $db->prepare('INSERT INTO teamActivity.users (username, password) VALUES (:username, :password)');
             $statement->bindValue(':username', $clientUsername);
             $statement->bindValue(':password', $hashedPassword);
             $statement->execute();
