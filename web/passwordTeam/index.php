@@ -39,6 +39,10 @@
             $_SESSION['user_id'] = $rows[0]['id'];
             header("Location: welcome.php");
             die();    
+        } else {
+            header("Location: login.php");
+            die();  
+
         }
             break;
         case 'signup':

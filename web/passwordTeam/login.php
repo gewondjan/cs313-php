@@ -36,6 +36,8 @@
 <input type='submit'>
 </form>
 
+<a href='signup.php'>Click here to sign up if you don't have an account</a>
+
 
 </body>
 </html>
