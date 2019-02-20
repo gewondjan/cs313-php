@@ -30,15 +30,21 @@
             $clientUsername = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_EMAIL);
             $clientPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
             $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
- 
+
+            echo "client username: " .  $clientUsername;
+            echo "client password: " . $clientPassword;
+            echo "hashedPassword: " . $hashedPassword;
+        
         
             $statement = $db->prepare('INSERT INTO teamActivity.users VALUES (:username, :password)');
             $statement->bindValue(':username', $clientUsername, PDO::PARAM_STR);
             $statement->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
             $statement->execute();
 
-            header("Location: login.php");
-            die();    
+
+            include 'login.php';
+            // header("Location: login.php");
+            // die();    
 
             break;
         case 'welcome':
