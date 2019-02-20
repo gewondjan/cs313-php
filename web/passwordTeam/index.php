@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <?php
     session_start();
     $url = parse_url(getenv('DATABASE_URL'));
@@ -37,8 +37,8 @@
         
         
             $statement = $db->prepare('INSERT INTO teamActivity.users VALUES (:username, :password)');
-            $statement->bindValue(':username', $clientUsername, PDO::PARAM_STR);
-            $statement->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+            $statement->bindValue(':username', $clientUsername);
+            $statement->bindValue(':password', $hashedPassword);
             $statement->execute();
 
 
