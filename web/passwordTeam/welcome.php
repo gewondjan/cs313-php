@@ -24,7 +24,9 @@
 <head>
 </head>
 <body>
-<h1>Welcome <?php echo $_SESSION['user_id']; ?></h1>
+
+
+<h1>Welcome <?php echo $_GET['username']; ?></h1>
 
 
 </body>

@@ -37,7 +37,7 @@
 
         if (password_verify($clientPassword, $rows[0]['password'])){
             $_SESSION['user_id'] = $rows[0]['id'];
-            header("Location: welcome.php");
+            header("Location: index.php?action=welcome");
             die();    
         } else {
             header("Location: login.php");
@@ -68,6 +68,24 @@
 
             break;
         case 'welcome':
+        
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: login.php");
+            die();                  
+        } else {
+
+            
+            $statement = $db->prepare('SELECT username from teamActivity.users WHERE id = :id');
+            $statement->bindValue(':id', $_SESSION['user_id'], PDO::PARAM_INT);
+            $statement->execute();
+            $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+            
+            header("Location: welcome.php?username=" . $row[0]['username']);
+            die();   
+            
+        }
+            
             break;
         default:
             echo "we should never be here";
