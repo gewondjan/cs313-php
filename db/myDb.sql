@@ -2,12 +2,26 @@
 BEGIN;
 /* Code I would have used to Create and Connect to the Database
 
-create database project;  
+create database project;
 
 \c project
 
 */
--- Instead I will create a schema
+
+--Drop everything before we begin
+DROP TABLE project.deadlines;
+DROP TABLE project.todos;
+DROP TABLE project.accomplishments;
+DROP TABLE project.bucketlist;
+DROP TABLE project.abcPriority;
+DROP TABLE project.users;
+
+DROP SCHEMA project;
+
+
+
+
+-- Creating the Schema
 CREATE SCHEMA project;
 
 /* Create Tables */
@@ -25,6 +39,7 @@ CREATE TABLE project.abcPriority (
 
 CREATE TABLE project.bucketlist (
     id       SERIAL PRIMARY KEY,
+    user_id int NOT NULL REFERENCES project.users(id),
     itemDescription varchar(300) NOT NULL,
     primaryPriority varchar(1) REFERENCES project.abcPriority(priority),
     secondaryPriority int --Will add the check to make sure this is between 1 and 10 in the code, at least I think so.
@@ -32,8 +47,9 @@ CREATE TABLE project.bucketlist (
 
 CREATE TABLE project.accomplishments (
     id       SERIAL   PRIMARY KEY,
+    user_id int NOT NULL REFERENCES project.users(id),
     itemDescription varchar(300) NOT NULL,
-    completedDate DATE    
+    completedDate DATE
 );
 
 CREATE TABLE project.todos (
@@ -57,23 +73,23 @@ CREATE TABLE project.deadlines (
 
 /* INSERT STATEMENTS FOR SAMPLE DATA */
 
-INSERT INTO project.users (name, email, password) 
-VALUES ('ryan', 'ryan@test.com', 'ryanPassword'), 
+INSERT INTO project.users (name, email, password)
+VALUES ('ryan', 'ryan@test.com', 'ryanPassword'),
 ('bob', 'bob@test.com', 'bobPassword');
 
 INSERT INTO project.abcPriority (priority) VALUES ('A'), ('B'), ('C'), ('');
 
-INSERT INTO project.bucketlist (itemDescription, primaryPriority, secondaryPriority) 
-VALUES ('Climb Mount Everest', 'A', 3),
-('Run a Marathon', 'B', 1),
-('Make 100 Friends', 'C', 8),
-('Jump 5 feet', 'A', 2),
-('Eat at innout', 'C', 1),
-('Make a burrito', 'B', 2);
+INSERT INTO project.bucketlist (user_id, itemDescription, primaryPriority, secondaryPriority)
+VALUES (1, 'Climb Mount Everest', 'A', 3),
+(1, 'Run a Marathon', 'B', 1),
+(1, 'Make 100 Friends', 'C', 8),
+(1, 'Jump 5 feet', 'A', 2),
+(2, 'Eat at innout', 'C', 1),
+(2, 'Make a burrito', 'B', 2);
 
-INSERT INTO project.accomplishments (itemDescription, completedDate)
-VALUES ('Run a half marathon', current_date),
-('Go cliff jumping', current_date);
+INSERT INTO project.accomplishments (user_id, itemDescription, completedDate)
+VALUES (1, 'Run a half marathon', current_date),
+(2, 'Go cliff jumping', current_date);
 
 INSERT INTO project.todos (bucketListId, description, completedDate)
 VALUES ((SELECT id from project.bucketlist WHERE itemDescription = 'Run a Marathon'), 'train for 100 hours', null),

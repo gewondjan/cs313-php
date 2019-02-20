@@ -1,0 +1,17 @@
+
+TODOS:
+
+1. When I am done building, I will add references to where I got all the pieces as needed!
+
+2. Create the home page with the get header add-in (which puts the style and sheets that are needed for all pages)
+    Additionally add the get nav-bar functionality set up with a parameter to highlight which navigation element you are on
+    (use bootstrap navigation bar).
+
+    So in three words, complete home.php, header.php and navbar.php
+
+3. Build login and logout functionality with session variables detemine if the session set-up should be in header or no (probably should)
+
+4. build db connection file
+
+5. Ryan you were slightly late to starting the Group team project should you make a change to your grade???
+

@@ -50,6 +50,7 @@ catch (PDOException $ex)
 
     
     header("Location: addScripture.php");
+    die();
 
 ?>
 
