@@ -24,7 +24,17 @@
 <head>
 </head>
 <body>
-<h1>Please Sign up with a user name and password</h1>
+<h1>Log-in Page</h1>
+<form action="index.php?action=login" method="post" autocomplete="off">
+
+<label for='username'>Enter Username:</label>
+<input type='text' id='username' name='username'>
+
+<label for='password'>Enter Username:</label>
+<input type='password' id='password' name='password'>
+
+<input type='submit'>
+</form>
 
 
 </body>

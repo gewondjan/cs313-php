@@ -24,6 +24,22 @@
 
     switch($action) {
         case 'login':
+
+        $clientUsername = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_EMAIL);
+        $clientPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+        $statement = $db->prepare('SELECT * FROM teamActivity.users WHERE username = :username');
+        $statement->bindValue(':username', $clientUsername);
+        $statement->execute();            
+
+        $rows = $statement.fetchAll(PDO::FETCH_ASSOC);
+
+
+        if (password_verify($clientPassword, $rows[0]['password'])){
+            $_SESSION['user_id'] = $rows[0]['id'];
+            header("Location: welcome.php");
+            die();    
+        }
             break;
         case 'signup':
 
