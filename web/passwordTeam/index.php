@@ -42,9 +42,9 @@
             $statement->execute();
 
 
-            include 'login.php';
-            // header("Location: login.php");
-            // die();    
+            // include 'login.php';
+            header("Location: login.php");
+            die();    
 
             break;
         case 'welcome':
