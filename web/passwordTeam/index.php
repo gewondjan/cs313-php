@@ -32,7 +32,7 @@
         $statement->bindValue(':username', $clientUsername);
         $statement->execute();            
 
-        $rows = $statement.fetchAll(PDO::FETCH_ASSOC);
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
         if (password_verify($clientPassword, $rows[0]['password'])){
