@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <? require 'header.php'; ?>
 </head>
 <body>
 <div id='navbar'>
