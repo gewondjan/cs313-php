@@ -18,7 +18,7 @@
 <input type='text' id='email' name='email'>
 
 <label for='password'>Password: </label>
-<input type='text' id='password' name='password'>
+<input type='password' id='password' name='password'>
 
 <input type='submit' value='Sign-In!'>
 
@@ -36,7 +36,7 @@
 <input type='text' id='createEmail' name='email'>
 
 <label for='createPassword'>Password: </label>
-<input type='text' id='createPassword' name='password'>
+<input type='password' id='createPassword' name='password'>
 
 <input type='submit' value='Create Account!'>
 

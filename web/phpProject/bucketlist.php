@@ -24,7 +24,7 @@
 
     echo "<ul>";
     foreach($rows as $row) {
-        echo "<li>" . $row['itemDescription'] . "</li>";        
+        echo "<li>" . $row['itemdescription'] . "</li>";        
     }
     echo "</ul>";
     
