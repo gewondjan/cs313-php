@@ -1,6 +1,6 @@
 <?php
 
-    function showNavbar(currentTab) {
+    function showNavbar($currentTab) {
 
         echo '<nav class="navbar navbar-default">
         <div class="container-fluid">
