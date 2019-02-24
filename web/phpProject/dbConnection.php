@@ -13,7 +13,7 @@
         try {
             $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbPackage['user'], $dbPackage['pass']);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+            return $db;
 
         } catch (PDOException $e)
         {
