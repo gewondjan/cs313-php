@@ -8,13 +8,15 @@
         $dbName = ltrim($dbPackage['path'], '/');
         $dbHost = $dbPackage['host'];
         $dbPort = $dbPackage['port'];
+        $dbUser = $dbPackage['user'];
+        $dbPassword = $dbPackage['pass'];
+
         $db = null;
         
         try {
-            $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbPackage['user'], $dbPackage['pass']);
+            $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $db;
-
+            
         } catch (PDOException $e)
         {
             echo "Error" . $e->getMessage();
