@@ -6,10 +6,12 @@
         
         
         $dbName = ltrim($dbPackage['path'], '/');
+        $dbHost = $dbPackage['host'];
+        $dbPort = $dbPackage['port'];
         $db = null;
         
         try {
-            $db = new PDO("pgsql:host=$dbPackage['host'];port=$dbPackage['port'];dbname=$dbName", $dbPackage['user'], $dbPackage['pass']);
+            $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbPackage['user'], $dbPackage['pass']);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
