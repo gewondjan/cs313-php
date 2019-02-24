@@ -1,14 +1,17 @@
 <?php
+    require 'header.php';
+    require 'navbar.php';
 
-
+    session_start();
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?php require 'header.php' ?>
+    <?php add_header(); ?>
 </head>
 <body>
+<div id='navbar'><?php showNavbar(); ?></div>
 <h2>Sign-In Here:</h2>
 <form method='post' action='action.php?action=signIn'>
 <label for='email'>Email: </label>

@@ -13,7 +13,7 @@
     //-------------------------------------------------------------------
     
     function createAccount() {
-        $hashedPassword = password_hash($_POST['password']);
+        $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $stmt = $db->prepare('INSERT INTO project.users (name, email, password) VALUES (:name, :email, :password)');
         $stmt->bindValue(":name", $_POST['name'], PDO::PARAM_STR);
