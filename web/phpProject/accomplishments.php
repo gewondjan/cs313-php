@@ -1,7 +1,7 @@
 <?php
     require 'header.php';
     require 'navbar.php';
-    require 'dbConnection.php'
+    require 'dbConnection.php';
 
     session_start();
     $db = get_db();

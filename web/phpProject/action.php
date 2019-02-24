@@ -27,12 +27,12 @@
 
     }    
     
-    function signIn($email = $_POST['email'], $password = $_POST['password']) {
+    function signIn() {
         $stmt = $db->prepare('SELECT * FROM project.users WHERE email = :email');
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->bindValue(':email',  $_POST['email'], PDO::PARAM_STR);
         $stmt->execute();
         $returnedUser = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($password, $returnedUser['password']) {
+        if (password_verify($_POST['password'], $returnedUser['password'])) {
             //The user's password is correct
             $_SESSION['user_id'] = $returnedUser['id'];
             $_SESSION['user_name'] = $returnedUser['name'];
