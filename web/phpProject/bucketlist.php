@@ -23,7 +23,12 @@
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-
+    echo "<div class='row'>";
+    echo "<div class='col'><div class='card'>Unassigned</div></div>";
+    echo "<div class='col'><div class='card'>A</div></div>";
+    echo "<div class='col'><div class='card'>B</div></div>";
+    echo "<div class='col'><div class='card'>C</div></div>";   
+    echo "</div>";
 
 
     $assocPrimaryPriorityNumbers = array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
