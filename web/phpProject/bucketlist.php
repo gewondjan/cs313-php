@@ -26,7 +26,7 @@
 
 
 
-    $assocPrimaryPriorityNumbers = new array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
+    $assocPrimaryPriorityNumbers = array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
     echo "<div class='row'><div class='col'>";
     $lastEntryPrimaryPriority = '';
     $numberColumnsToAdd = 0;
