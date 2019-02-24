@@ -8,9 +8,9 @@
         <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
         <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="bucketlist.php"> BucketList </a></li>
-        <li><a href="accomplishments.php"> Accomplishments </a></li>
+        <li class="active"><a href="#">Home</a></li>&nbsp;&nbsp;
+        <li><a href="bucketlist.php"> BucketList </a></li>&nbsp;&nbsp;
+        <li><a href="accomplishments.php"> Accomplishments </a></li>&nbsp;&nbsp;
         <li><a href="loginPage.php"> Sign-In </a></li>
         </ul>
         </div>
