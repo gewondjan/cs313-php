@@ -26,13 +26,21 @@
 
 
 
-    echo "<div class='row'>";
+    $assocPrimaryPriorityNumbers = new array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
+    echo "<div class='row'><div class='col'>";
+    $lastEntryPrimaryPriority = '';
+    $numberColumnsToAdd = 0;
     foreach($rows as $row) {
+        $currentEntryPrimaryPriority = $row['primarypriority'];
+        $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
+        for ($it = 0; $it < $numberColumnsToAdd; $it++) {
+            echo "</div><div class='col'>";
+        }
         echo "<div class='card'>";
-        echo "<div class='card-title'>" . $row['itemdescription'] . "</div>";
+        echo "<div class='card-body'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></div>";
         echo "</div>";
     }
-    echo "</div>";
+    echo "</div></div>";
 
 ?>
 
