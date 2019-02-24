@@ -33,6 +33,7 @@
     foreach($rows as $row) {
         $currentEntryPrimaryPriority = $row['primarypriority'];
         $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
+        $lastEntryPrimaryPriority = $currentEntryPrimaryPriority;
         for ($it = 0; $it < $numberColumnsToAdd; $it++) {
             echo "</div><div class='col'>";
         }
