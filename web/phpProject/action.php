@@ -1,7 +1,6 @@
 <?php
     //Set up the Database connection
     require 'dbConnection.php';
-    $db = get_db();
 
     //Start the session
     session_start();
@@ -30,6 +29,7 @@
     }    
     
     function signIn() {
+        $db = get_db();
         $stmt = $db->prepare('SELECT * FROM project.users WHERE email = :email');
         $stmt->bindValue(':email',  $_POST['email'], PDO::PARAM_STR);
         $stmt->execute();
