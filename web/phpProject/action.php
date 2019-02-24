@@ -16,7 +16,7 @@
         $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $db = get_db();
-        echo $db;
+        
         $stmt = $db->prepare('INSERT INTO project.users (name, email, password) VALUES (:name, :email, :password)');
         $stmt->bindValue(":name", $_POST['name'], PDO::PARAM_STR);
         $stmt->bindValue(":email", $_POST['email'], PDO::PARAM_STR);
