@@ -1,6 +1,6 @@
 <?php
 
-    function showNavbar($currentTab) {
+    function showNavbar() {
 
         echo '<nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -9,9 +9,9 @@
         </div>
         <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="bucketlist.php"> BucketList </a></li>
+        <li><a href="accomplishments.php"> Accomplishments </a></li>
+        <li><a href="loginPage.php"> Sign-In </a></li>
         </ul>
         </div>
         </nav>';
