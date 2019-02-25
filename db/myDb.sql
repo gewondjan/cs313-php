@@ -28,9 +28,9 @@ CREATE SCHEMA project;
 
 CREATE TABLE project.users (
     id       SERIAL  PRIMARY KEY,
-    name        varchar(50) NOT NULL,
-    email       varchar(50) NOT NULL UNIQUE,
-    password    varchar(50) NOT NULL
+    name        varchar(200) NOT NULL,
+    email       varchar(200) NOT NULL UNIQUE,
+    password    varchar(200) NOT NULL
 );
 
 CREATE TABLE project.abcPriority (
@@ -74,7 +74,7 @@ CREATE TABLE project.deadlines (
 /* INSERT STATEMENTS FOR SAMPLE DATA */
 
 INSERT INTO project.users (name, email, password)
-VALUES ('ryan', 'ryan@test.com', 'ryanPassword'),
+VALUES ('ryan', 'ryan@test.com', '$2y$10$.uESqzS/YBR7w9yWnxPUmOOoThAuya2lcNM95BROs9EJQath5P0qe'),
 ('bob', 'bob@test.com', 'bobPassword');
 
 INSERT INTO project.abcPriority (priority) VALUES ('A'), ('B'), ('C'), ('');
@@ -84,6 +84,7 @@ VALUES (1, 'Climb Mount Everest', 'A', 3),
 (1, 'Run a Marathon', 'B', 1),
 (1, 'Make 100 Friends', 'C', 8),
 (1, 'Jump 5 feet', 'A', 2),
+(1, 'unassigned', '', 3),
 (2, 'Eat at innout', 'C', 1),
 (2, 'Make a burrito', 'B', 2);
 
