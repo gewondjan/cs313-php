@@ -22,7 +22,7 @@
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmtPriorities = $db->prepare('SELECT * FROM abcPriority');
+    $stmtPriorities = $db->prepare('SELECT * FROM project.abcPriority');
     $stmtPriorities->execute();
     $abcPriorities = $stmtPriorities->fetchAll(PDO::FETCH_ASSOC);
 
