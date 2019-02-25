@@ -65,14 +65,15 @@
         //Secondard Priority
         echo "<label for='numberPriority'>1-10: </label>";
         echo "<select id='numberPriority' class='priority'>";
-        for ($i = 1; $i <= 10; $i++){
+        for ($i = 0; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
                 echo "<option selected='selected' class='priority'>";
             } else {
                 echo "<option class='priority'>";
             }
-            echo $i . "</option>";
+            echo ($i == 0 ) ?  '' : $i; 
+            echo "</option>";
         }
         
         echo "</select>";
