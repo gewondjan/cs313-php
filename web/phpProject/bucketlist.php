@@ -47,7 +47,7 @@
             echo "</div><div class='col'>";
         }
         echo "<div class='card'>";
-        echo "<div class='card-body'><a href='google.com'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
+        echo "<div class='card-body'><a href='todos.php?bucketlistItem=" . $row['id'] . "'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
         echo "<b>Priority</b><br>";
         //Primary Priority
         echo "<label for='abcPriority'>A-C: </label>";
