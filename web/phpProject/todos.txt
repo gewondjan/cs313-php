@@ -27,4 +27,6 @@ then make the bucketlist page so that it can handle a change in priority (UI and
 
 Future:
 
+Could make it so that the same number priority item cannot be selected
+
 Could add a security check to make sure different users cannot get the todo items of other users.

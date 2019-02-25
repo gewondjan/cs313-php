@@ -10,6 +10,7 @@
 <html>
 <head>
     <?php add_header(); ?>
+    <script src="bucketlist.js"></script>
 </head>
 <body>
 <div id='navbar'><?php showNavbar(); ?></div>
@@ -46,12 +47,12 @@
         for ($it = 0; $it < $numberColumnsToAdd; $it++) {
             echo "</div><div class='col'>";
         }
-        echo "<div class='card'>";
-        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
+        echo "<div class='card' id='" . $row['bl.id'] . "'>";
+        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['bl.id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
         echo "<b>Priority: </b>";
         //Primary Priority
         echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
-        echo "<select id='abcPriority' class='priority prioritySelect'>";
+        echo "<select onchange='reorderBucketlistBoard(" . $row['bl.id'] . ")' id='abcPriority' class='priority prioritySelect'>";
         foreach($abcPriorities as $priority) {
             if ($priority['priority'] == $row['primarypriority'])
             {
@@ -68,7 +69,7 @@
         for ($i = 0; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
-                echo "<a href='www.google.com'><option selected='selected' class='priority'></a>";
+                echo "<option selected='selected' class='priority'>";
             } else {
                 echo "<option class='priority'>";
             }
