@@ -22,7 +22,11 @@
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $stmtPriorities = $db->prepare('SELECT * FROM abcPriority');
+    $stmtPriorities->execute();
+    $abcPriorities = $stmtPriorities->fetchAll(PDO::FETCH_ASSOC);
 
+    //Add headers to grid
     echo "<div class='row'>";
     echo "<div class='col'><div class='card'>Unassigned</div></div>";
     echo "<div class='col'><div class='card'>A</div></div>";
@@ -44,6 +48,32 @@
         }
         echo "<div class='card'>";
         echo "<div class='card-body'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></div>";
+        //Primary Priority
+        echo "<select>";
+        foreach($abcPriorities as $priority) {
+            if ($priority == $row['primarypriority'])
+            {
+                echo "<option selected='selected'>";
+            } else {
+                echo "<option>"
+            }
+            echo $priority . "</option>"
+        }
+        echo  "</select>";
+        //Secondard Priority
+        echo "<select>";
+        for ($i = 1; $i <= 10 $i++){
+            if ($i == $row['secondarypriority'])
+            {
+                echo "<option selected='selected'>";
+            } else {
+                echo "<option>"
+            }
+            echo $i . "</option>";
+        }
+        
+        echo "</select>";
+        echo "<p class='card-text'>" . $row[''] . "</p>";
         echo "</div>";
     }
     echo "</div></div>";

@@ -13,12 +13,16 @@
 <body>
 <div id='navbar'><?php showNavbar(); ?></div>
 <h2>Sign-In Here:</h2>
+<br>
+
 <form method='post' action='action.php?action=signIn'>
 <label for='email'>Email: </label>
 <input type='text' id='email' name='email'>
+<br>
 
 <label for='password'>Password: </label>
 <input type='password' id='password' name='password'>
+<br>
 
 <input type='submit' value='Sign-In!'>
 
@@ -31,13 +35,13 @@
 
 <label for='creatName'>Your Name: </label>
 <input type='text' id='createName' name='name'>
-
+<br>
 <label for='createEmail'>Email: </label>
 <input type='text' id='createEmail' name='email'>
-
+<br>
 <label for='createPassword'>Password: </label>
 <input type='password' id='createPassword' name='password'>
-
+<br>
 <input type='submit' value='Create Account!'>
 
 </form>
