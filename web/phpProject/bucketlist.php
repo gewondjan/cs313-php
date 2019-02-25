@@ -22,7 +22,7 @@
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmtPriorities = $db->prepare('SELECT * FROM project.abcPriority');
+    $stmtPriorities = $db->prepare('SELECT priority FROM project.abcPriority ORDER BY priority asc');
     $stmtPriorities->execute();
     $abcPriorities = $stmtPriorities->fetchAll(PDO::FETCH_ASSOC);
 
@@ -47,10 +47,10 @@
             echo "</div><div class='col'>";
         }
         echo "<div class='card'>";
-        echo "<div class='card-body'><a href='todos.php?bucketlistItem=" . $row['id'] . "'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
-        echo "<b>Priority</b><br>";
+        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
+        echo "<b>Priority</b>";
         //Primary Priority
-        echo "<label for='abcPriority'>A-C: </label>";
+        echo "<span>A-C: </span>";
         echo "<select id='abcPriority' class='priority'>";
         foreach($abcPriorities as $priority) {
             if ($priority['priority'] == $row['primarypriority'])

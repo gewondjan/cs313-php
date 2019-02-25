@@ -25,12 +25,9 @@ echo "<h1>Todos for " . $todos['itemdescription'] . "</h1>";
 
 
 echo "<ul>";
-<?php
-    foreach($todos as $todo) {
-        echo "<li>" . $todo['description'] . "</li>";
-    }
-
-?>
+foreach($todos as $todo) {
+    echo "<li>" . $todo['description'] . "</li>";
+}
 echo "</ul>";
 
 
