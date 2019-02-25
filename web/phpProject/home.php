@@ -12,7 +12,7 @@
 <html>
 <head>
     <? add_header(); ?>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="bucketlist.css">
 </head>
 <body>
 <div id='navbar'><?php showNavbar(); ?></div>
