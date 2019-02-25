@@ -18,7 +18,7 @@
 
 <?php
     $db = get_db();
-    $stmt = $db->prepare('SELECT * FROM project.users AS u JOIN project.bucketlist AS bl ON u.id = bl.user_id WHERE u.id = :id ORDER BY primarypriority asc, secondarypriority asc');
+    $stmt = $db->prepare('SELECT bl.id, bl.itemdescription, bl.primarypriority, bl.secondarypriority FROM project.users AS u JOIN project.bucketlist AS bl ON u.id = bl.user_id WHERE u.id = :id ORDER BY primarypriority asc, secondarypriority asc;');
     $stmt->bindValue(":id", $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -47,12 +47,12 @@
         for ($it = 0; $it < $numberColumnsToAdd; $it++) {
             echo "</div><div class='col'>";
         }
-        echo "<div class='card' id='" . $row['bl.id'] . "'>";
-        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['bl.id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
+        echo "<div class='card' id='" . $row['id'] . "'>";
+        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
         echo "<b>Priority: </b>";
         //Primary Priority
         echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
-        echo "<select onchange='reorderBucketlistBoard(" . $row['bl.id'] . ")' id='abcPriority' class='priority prioritySelect'>";
+        echo "<select onchange='reorderBucketlistBoard(" . $row['id'] . ")' id='abcPriority' class='priority prioritySelect'>";
         foreach($abcPriorities as $priority) {
             if ($priority['priority'] == $row['primarypriority'])
             {
