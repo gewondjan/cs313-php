@@ -23,6 +23,7 @@ todo link and page set up to display associated TODOS set up the todo page as we
 
 then make the bucketlist page so that it can handle a change in priority (UI and database will be updated).
 
+Need to add a way to add a bucketlist item
 
 
 Future:

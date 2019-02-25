@@ -45,10 +45,10 @@
         $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
         $lastEntryPrimaryPriority = $currentEntryPrimaryPriority;
         for ($it = 0; $it < $numberColumnsToAdd; $it++) {
-            echo "</div><div class='col'>";
+            echo "</div><div class='col'><div></div>";
         }
-        echo "<div class='card-holder' id='" . $row['id'] . "'>";
-        echo "<div class='card'>";
+        echo "<div class='card-holder'>";
+        echo "<div class='card' id='" . $row['id'] . "'>";
         echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
         echo "<b>Priority: </b>";
         //Primary Priority
