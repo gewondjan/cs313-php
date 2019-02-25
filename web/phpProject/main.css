@@ -13,3 +13,11 @@
     display: inline;
 
 }
+
+.column-title {
+    text-align: center;
+}
+
+.column-title:hover {
+    font-weight: 2em;
+}

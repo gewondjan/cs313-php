@@ -30,7 +30,7 @@ foreach($todos as $todo) {
 }
 echo "</ul>";
 
-
+?>
 
 </body>
 </html>

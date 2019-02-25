@@ -28,10 +28,10 @@
 
     //Add headers to grid
     echo "<div class='row'>";
-    echo "<div class='col'><div class='card'>Unassigned</div></div>";
-    echo "<div class='col'><div class='card'>A</div></div>";
-    echo "<div class='col'><div class='card'>B</div></div>";
-    echo "<div class='col'><div class='card'>C</div></div>";   
+    echo "<div class='col'><div class='card'><h4 class='column-title'></h4>Unassigned</h4></div></div>";
+    echo "<div class='col'><div class='card'><h4 class='column-title'>A</h4></div></div>";
+    echo "<div class='col'><div class='card'><h4 class='column-title'>B</h4></div></div>";
+    echo "<div class='col'><div class='card'><h4 class='column-title'>C</h4></div></div>";   
     echo "</div>";
 
 
