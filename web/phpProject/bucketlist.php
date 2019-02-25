@@ -62,7 +62,7 @@
         echo  "</select>";
         //Secondard Priority
         echo "<select>";
-        for ($i = 1; $i <= 10 $i++){
+        for ($i = 1; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
                 echo "<option selected='selected'>";
