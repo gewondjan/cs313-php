@@ -20,6 +20,8 @@
 
 .bucket-list-item:hover {
     font-size: 2em;
-    text-decoration: none;
+}
 
+.no-underline-link {
+    text-decoration: none;
 }
