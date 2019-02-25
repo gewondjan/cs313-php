@@ -5,13 +5,14 @@
 
     session_start();
     $db = get_db();
-
+    
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <? add_header(); ?>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <div id='navbar'><?php showNavbar(); ?></div>
