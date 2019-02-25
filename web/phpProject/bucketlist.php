@@ -50,7 +50,7 @@
         echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
         echo "<b>Priority</b>";
         //Primary Priority
-        echo "<span>A-C: </span>";
+        echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
         echo "<select id='abcPriority' class='priority'>";
         foreach($abcPriorities as $priority) {
             if ($priority['priority'] == $row['primarypriority'])
@@ -63,7 +63,7 @@
         }
         echo  "</select>";
         //Secondard Priority
-        echo "<label for='numberPriority'>1-10: </label>";
+        echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
         echo "<select id='numberPriority' class='priority'>";
         for ($i = 0; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
