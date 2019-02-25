@@ -48,7 +48,7 @@
         }
         echo "<div class='card'>";
         echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
-        echo "<b>Priority</b>";
+        echo "<b>Priority: </b>";
         //Primary Priority
         echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
         echo "<select id='abcPriority' class='priority prioritySelect'>";
@@ -61,14 +61,14 @@
             }
             echo $priority['priority'] . "</option>";
         }
-        echo  "</select>";
+        echo  "</select>&nbsp;&nbsp;";
         //Secondard Priority
         echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
         echo "<select id='numberPriority' class='priority prioritySelect'>";
         for ($i = 0; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
-                echo "<option selected='selected' class='priority'>";
+                echo "<a href='www.google.com'><option selected='selected' class='priority'></a>";
             } else {
                 echo "<option class='priority'>";
             }
