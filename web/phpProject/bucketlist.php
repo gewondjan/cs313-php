@@ -21,7 +21,7 @@
     $stmt = $db->prepare('SELECT bl.id, bl.itemdescription, bl.primarypriority, bl.secondarypriority FROM project.users AS u JOIN project.bucketlist AS bl ON u.id = bl.user_id WHERE u.id = :id ORDER BY primarypriority asc, secondarypriority asc;');
     $stmt->bindValue(":id", $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $bucketlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $stmtPriorities = $db->prepare('SELECT priority FROM project.abcPriority ORDER BY priority asc');
     $stmtPriorities->execute();
@@ -37,57 +37,80 @@
 
 
     $assocPrimaryPriorityNumbers = array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
-    echo "<div class='row'><div class='col'>";
-    $lastEntryPrimaryPriority = '';
-    $numberColumnsToAdd = 0;
-    foreach($rows as $row) {
-        $currentEntryPrimaryPriority = $row['primarypriority'];
-        $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
-        $lastEntryPrimaryPriority = $currentEntryPrimaryPriority;
-        for ($it = 0; $it < $numberColumnsToAdd; $it++) {
-            echo "</div><div class='col'><div></div>";
-        }
-        echo "<div class='card-holder'>";
-        echo "<div class='card' id='" . $row['id'] . "'>";
-        echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
-        echo "<b>Priority: </b>";
-        //Primary Priority
-        echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
-        echo "<select onchange='reorderBucketlistBoard(" . $row['id'] . ")' id='abcPriority' class='priority prioritySelect'>";
-        foreach($abcPriorities as $priority) {
-            if ($priority['priority'] == $row['primarypriority'])
-            {
-                echo "<option selected='selected' class='priority'>";
-            } else {
-                echo "<option class='priority'>";
+    echo "<div class='row'>";
+    // $lastEntryPrimaryPriority = '';
+    // $numberColumnsToAdd = 0;
+    // foreach($rows as $row) {
+
+    $bucketlistCoordinateToRow = array();
+    foreach($bucketlist as $row) {
+        $primaryPrioritySymbol = ($row['primarypriority'] == '') ? '0' : $row['primarypriority']; 
+        $row['coordinate'] = $primaryPrioritySymbol . "-" . $row['secondarypriority'];
+        $bucketlistCoordinateToRow[$row['coordinate']] = $row;
+    }
+
+
+    // $rowI = 0;
+    foreach($abcPriorities as $abcPriority) {
+        echo "<div class='col'>";
+        $abcPriority['priority'] = ($abcPriority['priority'] == '') ? '0' : $abcPriority['priority'];
+        for ($it = 1; $it <= 10; $it++) {
+            $coordinate = $abcPriority['priority'] . "-" . $it;
+            echo "<div class='card-holder' id='" . $coordinate . "'>";
+            if (array_key_exists($coordinate, $bucketlistCoordinateToRow)) {
+                $currentItem = $bucketlistCoordinateToRow[$coordinate];
+                echo "<div class='card' id='" . $currentItem['id'] . "'>";
+                echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
+                echo "<b>Priority: </b>";
+                //Primary Priority
+                echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
+                echo "<select onchange='reorderBucketlistBoard(" . $currentItem['id'] . ")' id='abcPriority' class='priority prioritySelect'>";
+                foreach($abcPriorities as $priority) {
+                    if ($priority['priority'] == $currentItem['primarypriority'])
+                    {
+                        echo "<option selected='selected' class='priority'>";
+                    } else {
+                        echo "<option class='priority'>";
+                    }
+                    echo $priority['priority'] . "</option>";
+                }
+                echo  "</select>&nbsp;&nbsp;";
+                //Secondard Priority
+                echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
+                echo "<select id='numberPriority' class='priority prioritySelect'>";
+                for ($i = 0; $i <= 10; $i++){
+                    if ($i == $currentItem['secondarypriority'])
+                    {
+                        echo "<option selected='selected' class='priority'>";
+                    } else {
+                        echo "<option class='priority'>";
+                    }
+                    echo ($i == 0 ) ?  '' : $i;
+                    echo "</option>";
+                }
+                
+                echo "</select>";
+                //Close the Card-body div
+                echo "</div>";
+                //close the card div
+                echo "</div>";
+
             }
-            echo $priority['priority'] . "</option>";
+
+            //card-holder close outside of the if statement
+            echo "</div>";
         }
-        echo  "</select>&nbsp;&nbsp;";
-        //Secondard Priority
-        echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
-        echo "<select id='numberPriority' class='priority prioritySelect'>";
-        for ($i = 0; $i <= 10; $i++){
-            if ($i == $row['secondarypriority'])
-            {
-                echo "<option selected='selected' class='priority'>";
-            } else {
-                echo "<option class='priority'>";
-            }
-            echo ($i == 0 ) ?  '' : $i; 
-            echo "</option>";
-        }
-        
-        echo "</select>";
-        //Close the Card-body div
-        echo "</div>";
-        //close the card div
-        echo "</div>";
-        //close the card-holder div
+
+        //col close
         echo "</div>";
     }
-    //Close the last column div
-    echo "</div>";
+        // $currentEntryPrimaryPriority = $bucketlist[$rowI]['primarypriority'];
+        // $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
+        // $lastEntryPrimaryPriority = $currentEntryPrimaryPriority;
+        // for ($it = 0; $it < $numberColumnsToAdd; $it++) {
+        //     echo "</div><div class='col'><div></div>";
+        // }
+        
     //Close the row div
     echo "</div>";
 
