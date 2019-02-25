@@ -55,9 +55,9 @@
             {
                 echo "<option selected='selected'>";
             } else {
-                echo "<option>"
+                echo "<option>";
             }
-            echo $priority . "</option>"
+            echo $priority . "</option>";
         }
         echo  "</select>";
         //Secondard Priority
@@ -67,7 +67,7 @@
             {
                 echo "<option selected='selected'>";
             } else {
-                echo "<option>"
+                echo "<option>";
             }
             echo $i . "</option>";
         }
