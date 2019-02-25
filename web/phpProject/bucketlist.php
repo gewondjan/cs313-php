@@ -47,7 +47,7 @@
         for ($it = 0; $it < $numberColumnsToAdd; $it++) {
             echo "</div><div class='col'>";
         }
-        echo "<div class='card-holder'" . $row['id'] . ">";
+        echo "<div class='card-holder' id='" . $row['id'] . "'>";
         echo "<div class='card'>";
         echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
         echo "<b>Priority: </b>";
