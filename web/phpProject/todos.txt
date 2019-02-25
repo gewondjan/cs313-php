@@ -19,3 +19,6 @@ TODOS:
 
 Next:
 
+todo link and page set up to display associated TODOS set up the todo page as well
+
+then make the bucketlist page so that it can handle a change in priority (UI and database will be updated).

@@ -48,26 +48,29 @@
         }
         echo "<div class='card'>";
         echo "<div class='card-body'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></div>";
+        echo "<b>Priority</b><br>";
         //Primary Priority
-        echo "<select>";
+        echo "<label for='abcPriority'>A-C: </label>";
+        echo "<select id='abcPriority' class='priority'>";
         foreach($abcPriorities as $priority) {
-            if ($priority == $row['primarypriority'])
+            if ($priority['priority'] == $row['primarypriority'])
             {
-                echo "<option selected='selected'>";
+                echo "<option selected='selected' class='priority'>";
             } else {
-                echo "<option>";
+                echo "<option class='priority'>";
             }
-            echo $priority . "</option>";
+            echo $priority['priority'] . "</option>";
         }
         echo  "</select>";
         //Secondard Priority
-        echo "<select>";
+        echo "<label for='numberPriority'>1-10: </label>";
+        echo "<select id='numberPriority' class='priority'>";
         for ($i = 1; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
-                echo "<option selected='selected'>";
+                echo "<option selected='selected' class='priority'>";
             } else {
-                echo "<option>";
+                echo "<option class='priority'>";
             }
             echo $i . "</option>";
         }
