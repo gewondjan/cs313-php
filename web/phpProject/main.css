@@ -18,6 +18,6 @@
     text-align: center;
 }
 
-.column-title:hover {
-    font-weight: 2em;
+.bucket-list-item:hover {
+    font-size: 2em;
 }

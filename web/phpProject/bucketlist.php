@@ -28,7 +28,7 @@
 
     //Add headers to grid
     echo "<div class='row'>";
-    echo "<div class='col'><div class='card'><h4 class='column-title'></h4>Unassigned</h4></div></div>";
+    echo "<div class='col'><div class='card'><h4 class='column-title'>Unassigned</h4></div></div>";
     echo "<div class='col'><div class='card'><h4 class='column-title'>A</h4></div></div>";
     echo "<div class='col'><div class='card'><h4 class='column-title'>B</h4></div></div>";
     echo "<div class='col'><div class='card'><h4 class='column-title'>C</h4></div></div>";   
@@ -47,7 +47,7 @@
             echo "</div><div class='col'>";
         }
         echo "<div class='card'>";
-        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title'>" . $row['itemdescription'] . "</h4></a></div>";
+        echo "<div class='card-body'><a href='todos.php?bucketlistItemId=" . $row['id'] . "'><h4 class='card-title bucket-list-item'>" . $row['itemdescription'] . "</h4></a>";
         echo "<b>Priority</b>";
         //Primary Priority
         echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
@@ -77,10 +77,13 @@
         }
         
         echo "</select>";
-        echo "<p class='card-text'>" . $row[''] . "</p>";
+        //Close the Card-body div
+        echo "</div>";
+        //Close the column div
         echo "</div>";
     }
-    echo "</div></div>";
+    //Close the row div
+    echo "</div>";
 
 ?>
 
