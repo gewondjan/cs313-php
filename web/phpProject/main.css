@@ -5,7 +5,11 @@
 
 }
 
-.priorityLabel :{
+.priorityLabel {
+    display: inline;
+}
+
+.prioritySelect {
     display: inline;
 
 }

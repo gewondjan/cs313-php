@@ -51,7 +51,7 @@
         echo "<b>Priority</b>";
         //Primary Priority
         echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
-        echo "<select id='abcPriority' class='priority'>";
+        echo "<select id='abcPriority' class='priority prioritySelect'>";
         foreach($abcPriorities as $priority) {
             if ($priority['priority'] == $row['primarypriority'])
             {
@@ -64,7 +64,7 @@
         echo  "</select>";
         //Secondard Priority
         echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
-        echo "<select id='numberPriority' class='priority'>";
+        echo "<select id='numberPriority' class='priority prioritySelect'>";
         for ($i = 0; $i <= 10; $i++){
             if ($i == $row['secondarypriority'])
             {
