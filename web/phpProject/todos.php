@@ -1,12 +1,12 @@
 <?php
     require 'dbConnection.php';
-
-
+    require 'header.php';
+    require 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?php require 'header.php' ?>
+    <?php add_header();  ?>
 </head>
 <body>
 <div id='navbar'><?php showNavbar(); ?></div>
