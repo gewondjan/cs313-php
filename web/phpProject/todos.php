@@ -19,19 +19,19 @@
     $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-?>
-
-<h1>Todos for <?php $todos['itemdescription'] ?></h1>
 
 
-<ul>
+echo "<h1>Todos for " . $todos['itemdescription'] . "</h1>";
+
+
+echo "<ul>";
 <?php
     foreach($todos as $todo) {
         echo "<li>" . $todo['description'] . "</li>";
     }
 
 ?>
-</ul>
+echo "</ul>";
 
 
 
