@@ -44,8 +44,8 @@
 
     $bucketlistCoordinateToRow = array();
     foreach($bucketlist as $row) {
-        $primaryPrioritySymbol = ($row['primarypriority'] == '') ? '0' : $row['primarypriority']; 
-        $row['coordinate'] = $primaryPrioritySymbol . "-" . $row['secondarypriority'];
+        
+        $row['coordinate'] = $row['primaryPriority'] . "-" . $row['secondarypriority'];
         $bucketlistCoordinateToRow[$row['coordinate']] = $row;
     }
 
@@ -53,7 +53,6 @@
     // $rowI = 0;
     foreach($abcPriorities as $abcPriority) {
         echo "<div class='col'>";
-        $abcPriority['priority'] = ($abcPriority['priority'] == '') ? '0' : $abcPriority['priority'];
         for ($it = 1; $it <= 10; $it++) {
             $coordinate = $abcPriority['priority'] . "-" . $it;
             echo "<div class='card-holder' id='" . $coordinate . "'>";
@@ -72,7 +71,9 @@
                     {
                         echo "selected='selected'";
                     }
-                    echo ">" . $priority['priority'] . "</option>";
+                    echo ">";
+                    echo  ($priority['priority'] == '0') ? '' : $priority['priority'];
+                    echo "</option>";
                 }
                 echo  "</select>&nbsp;&nbsp;";
                 //Secondard Priority
