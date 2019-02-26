@@ -36,7 +36,7 @@
     echo "</div>";
 
 
-    $assocPrimaryPriorityNumbers = array('' => 1, 'A' => 2, 'B' => 3, 'C' => 4);
+    $assocPrimaryPriorityNumbers = array('' => '0', 'A' => 'A', 'B' => 'B', 'C' => 'C');
     echo "<div class='row'>";
     // $lastEntryPrimaryPriority = '';
     // $numberColumnsToAdd = 0;
@@ -63,21 +63,21 @@
                 echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
                 echo "<b>Priority: </b>";
                 //Primary Priority
-                echo "<label class='priorityLabel' for='abcPriority'>A-C: </label>";
-                echo "<select onchange='reorderBucketlistBoard(" . $currentItem['id'] . ")' id='abcPriority' class='priority prioritySelect'>";
+                echo "<label class='priorityLabel' for='abcPriority" . $currentItem['id'] . "'>A-C: </label>";
+                echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
+
                 foreach($abcPriorities as $priority) {
+                    echo "<option class='priority' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
-                        echo "<option selected='selected' class='priority'>";
-                    } else {
-                        echo "<option class='priority'>";
+                        echo "selected='selected'";
                     }
-                    echo $priority['priority'] . "</option>";
+                    echo ">" . $priority['priority'] . "</option>";
                 }
                 echo  "</select>&nbsp;&nbsp;";
                 //Secondard Priority
-                echo "<label class='priorityLabel' for='numberPriority'>1-10: </label>";
-                echo "<select id='numberPriority' class='priority prioritySelect'>";
+                echo "<label class='priorityLabel' for='numberPriority" . $currentItem['id'] . "'>1-10: </label>";
+                echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='numberPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
                 for ($i = 0; $i <= 10; $i++){
                     if ($i == $currentItem['secondarypriority'])
                     {
