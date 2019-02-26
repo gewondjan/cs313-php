@@ -43,7 +43,6 @@
 
     $bucketlistCoordinateToRow = array();
     foreach($bucketlist as $row) {
-        
         $row['coordinate'] = $row['primaryPriority'] . "-" . $row['secondarypriority'];
         $bucketlistCoordinateToRow[$row['coordinate']] = $row;
     }
@@ -66,7 +65,7 @@
 
                 foreach($abcPriorities as $priority) {
                     $priority['priority'] = ($priority['priority'] == '0') ? '' : $priority['priority'];
-                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] . "' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
+                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] . "' value='" . $priority['priority'] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
                         echo "selected='selected'";
