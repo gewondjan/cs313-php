@@ -67,7 +67,7 @@
                 echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
 
                 foreach($abcPriorities as $priority) {
-                    echo "<option class='priority' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
+                    echo "<option class='priority' id='abcOption" . $assocPrimaryPriorityNumbers[$priority['priority']] . "-" . $currentItem['id'] . "' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
                         echo "selected='selected'";
@@ -81,9 +81,9 @@
                 for ($i = 0; $i <= 10; $i++){
                     if ($i == $currentItem['secondarypriority'])
                     {
-                        echo "<option selected='selected' class='priority'>";
+                        echo "<option selected='selected' class='priority' id='numberOption" . $i . "-" . $currentItem['id'] . "'>";
                     } else {
-                        echo "<option class='priority'>";
+                        echo "<option class='priority' id='" . $i . "-" . $currentItem['id'] . "'>";
                     }
                     echo ($i == 0 ) ?  '' : $i;
                     echo "</option>";
