@@ -13,11 +13,11 @@ function moveCard(cardId) {
     $(`#${coordinate}`).html(cardContent);
     
     //Update the abc and number priorities
-    $(`#abcPriority${cardId}`).val() = abcPriority;
-    $(`#numberPriority${cardId}`).val() = numberPriority;
+    $(`#abcPriority${cardId}`).val(abcPriority);
+    $(`#numberPriority${cardId}`).val(numberPriority);
 
     //Remove the card from it's current location
-    $(`#${cardId}`).parent().html("");
+    $(`#${cardId}`).parent().empty();
 
     
 
