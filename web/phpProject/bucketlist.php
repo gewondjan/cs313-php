@@ -36,7 +36,6 @@
     echo "</div>";
 
 
-    $assocPrimaryPriorityNumbers = array('' => '0', 'A' => 'A', 'B' => 'B', 'C' => 'C');
     echo "<div class='row'>";
     // $lastEntryPrimaryPriority = '';
     // $numberColumnsToAdd = 0;
@@ -66,14 +65,13 @@
                 echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
 
                 foreach($abcPriorities as $priority) {
-                    echo "<option class='priority' id='abcOption" . $assocPrimaryPriorityNumbers[$priority['priority']] . "-" . $currentItem['id'] . "' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
+                    $priority['priority'] = ($priority['priority'] == '0') ? '' : $priority['priority'];
+                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] . "' value='" . $assocPrimaryPriorityNumbers[$priority['priority']] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
                         echo "selected='selected'";
                     }
-                    echo ">";
-                    echo  ($priority['priority'] == '0') ? '' : $priority['priority'];
-                    echo "</option>";
+                    echo ">" . $priority['priority'] . "</option>";
                 }
                 echo  "</select>&nbsp;&nbsp;";
                 //Secondard Priority
