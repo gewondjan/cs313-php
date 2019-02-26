@@ -46,7 +46,27 @@
         }
     }
 
+    function updateBucketlistGrid() {
+        $cardId = $_GET['cardId'];
+        $abcPriority = $_GET['abcPriority'];
+        $numberPriority = $_GET['numberPriority'];
 
+        $db = get_db();
+        $stmt = $db->prepare('UPDATE project.bucketlist SET primaryPriority = :primaryPriority, secondaryPriority = :secondaryPriority WHERE id = :id');
+        $stmt->bindValue(":primaryPriority", $abcPriority, PDO::PARAM_STR);
+        $stmt->bindValue(":secondaryPriority", $numberPriority, PDO::PARAM_INT);
+        $stmt->bindValue(":id", $cardId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //Could and should put something here to check to see if we were successful in updating the table, but for now, we will
+        //just go forward
+
+        header("Location: bucketlist.php");
+        die();
+
+
+
+    }
 
 
     //Action switch statement
@@ -59,6 +79,9 @@
             createAccount();
             break;
 
+        case 'updateBucketlistGrid':
+            updateBucketlistGrid();
+            break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';
             break;
