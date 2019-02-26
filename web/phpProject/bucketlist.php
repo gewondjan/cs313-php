@@ -79,12 +79,12 @@
                 echo "<label class='priorityLabel' for='numberPriority" . $currentItem['id'] . "'>1-10: </label>";
                 echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='numberPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
                 for ($i = 0; $i <= 10; $i++){
+                    echo "<option class='priority' id='numberOption" . $i . "-" . $currentItem['id'] . "'";
                     if ($i == $currentItem['secondarypriority'])
                     {
-                        echo "<option selected='selected' class='priority' id='numberOption" . $i . "-" . $currentItem['id'] . "'>";
-                    } else {
-                        echo "<option class='priority' id='" . $i . "-" . $currentItem['id'] . "'>";
+                        echo "selected='selected'";
                     }
+                    echo ">";
                     echo ($i == 0 ) ?  '' : $i;
                     echo "</option>";
                 }
