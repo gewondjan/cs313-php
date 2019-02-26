@@ -15,6 +15,10 @@ function moveCard(cardId) {
     //Insert the card content to the new location
     $(`#${coordinate}`).html(cardContent);
     
+    //Clear all selected values
+    $(`#numberPriority${cardId} > option`).attr("selected", "false");
+    $(`#abcPriority${cardId} > option`).attr("selected", "false");
+
     //Update the abc and number priorities
     $(`#abcOption${abcPriority}-${cardId}`).attr("selected", "selected");
     $(`#numberOption${numberPriority}-${cardId}`).attr("selected", "selected");
