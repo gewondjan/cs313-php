@@ -9,6 +9,9 @@ function moveCard(cardId) {
     var coordinate = abcPriority + "-" + numberPriority;
     var cardContent =  $(`#${cardId}`).parent().html();
 
+    //Remove the card from it's current location
+    $(`#${cardId}`).parent().empty();
+
     //Insert the card content to the new location
     $(`#${coordinate}`).html(cardContent);
     
@@ -16,10 +19,9 @@ function moveCard(cardId) {
     $(`#abcOption${abcPriority}-${cardId}`).attr("selected", "selected");
     $(`#numberOption${numberPriority}-${cardId}`).attr("selected", "selected");
 
+    alert($(`#${coordinate}`).html());
 
 
-    //Remove the card from it's current location
-    $(`#${cardId}`).parent().empty();
 
     
 
