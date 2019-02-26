@@ -65,7 +65,7 @@
 
                 foreach($abcPriorities as $priority) {
                     $priorityDisplay = ($priority['priority'] == '0') ? '' : $priority['priority'];
-                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] "' value='" . $priority['priority'] . "'";
+                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] . '" value='" . $priority['priority'] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
                         echo "selected='selected'";
