@@ -12,6 +12,10 @@ function moveCard(cardId) {
     var abcPriority = $(`#abcPriority${cardId}`).val();
     var numberPriority = $(`#numberPriority${cardId}`).val();
     var coordinate = abcPriority + "-" + numberPriority;
-    alert($(`#${cardId}`).parent().parent().html());
+    var cardContent =  $(`#${cardId}`).parent().html();
+
+    //Insert the card content to the new location
+    $(`#${coordinate}`).html(cardContent);
+
 
 }
