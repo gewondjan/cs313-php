@@ -23,6 +23,10 @@ function moveCard(cardId) {
     $(`#abcOption${abcPriority}-${cardId}`).attr("selected", "selected");
     $(`#numberOption${numberPriority}-${cardId}`).attr("selected", "selected");
 
+    //Make sure the correct values are showing.
+    $(`#abcPriority${cardId}`).val(abcPriority);
+    $(`#numberPriority${cardId}`).val(numberPriority);
+
     alert($(`#${coordinate}`).html());
 
 
