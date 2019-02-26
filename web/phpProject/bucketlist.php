@@ -43,7 +43,7 @@
 
     $bucketlistCoordinateToRow = array();
     foreach($bucketlist as $row) {
-        $row['coordinate'] = $row['primaryPriority'] . "-" . $row['secondarypriority'];
+        $row['coordinate'] = $row['primarypriority'] . "-" . $row['secondarypriority'];
         $bucketlistCoordinateToRow[$row['coordinate']] = $row;
     }
 
