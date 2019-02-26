@@ -64,13 +64,13 @@
                 echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
 
                 foreach($abcPriorities as $priority) {
-                    $priority['priority'] = ($priority['priority'] == '0') ? '' : $priority['priority'];
-                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] . "' value='" . $priority['priority'] . "'";
+                    $priorityDisplay = ($priority['priority'] == '0') ? '' : $priority['priority'];
+                    echo "<option class='priority' id='abcOption" . $priority['priority'] . "-" . $currentItem['id'] "' value='" . $priority['priority'] . "'";
                     if ($priority['priority'] == $currentItem['primarypriority'])
                     {
                         echo "selected='selected'";
                     }
-                    echo ">" . $priority['priority'] . "</option>";
+                    echo ">" . $priorityDisplay . "</option>";
                 }
                 echo  "</select>&nbsp;&nbsp;";
                 //Secondard Priority
