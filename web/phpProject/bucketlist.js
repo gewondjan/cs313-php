@@ -20,6 +20,9 @@ function moveCard(cardId) {
         //Remove the card from it's current location
         $(`#${cardId}`).parent().empty();
 
+
+        //Can add a conditional here where I will handle the case of adding a card in the same place as an existing card.
+
         //Insert the card content to the new location
         $(`#${coordinate}`).html(cardContent);
 

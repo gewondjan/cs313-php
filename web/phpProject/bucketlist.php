@@ -37,9 +37,6 @@
 
 
     echo "<div class='row'>";
-    // $lastEntryPrimaryPriority = '';
-    // $numberColumnsToAdd = 0;
-    // foreach($rows as $row) {
 
     $bucketlistCoordinateToRow = array();
     foreach($bucketlist as $row) {
@@ -47,8 +44,6 @@
         $bucketlistCoordinateToRow[$row['coordinate']] = $row;
     }
 
-
-    // $rowI = 0;
     foreach($abcPriorities as $abcPriority) {
         echo "<div class='col'>";
         for ($it = 1; $it <= 10; $it++) {
@@ -102,12 +97,6 @@
         //col close
         echo "</div>";
     }
-        // $currentEntryPrimaryPriority = $bucketlist[$rowI]['primarypriority'];
-        // $numberColumnsToAdd = $assocPrimaryPriorityNumbers[$currentEntryPrimaryPriority] - $assocPrimaryPriorityNumbers[$lastEntryPrimaryPriority];
-        // $lastEntryPrimaryPriority = $currentEntryPrimaryPriority;
-        // for ($it = 0; $it < $numberColumnsToAdd; $it++) {
-        //     echo "</div><div class='col'><div></div>";
-        // }
         
     //Close the row div
     echo "</div>";
