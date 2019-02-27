@@ -1,5 +1,14 @@
 'using strict'
 
+function addBucketlistItem() {
+
+    alert("adding item..");
+
+
+}
+
+
+
 function moveCard(cardId) {
 
     //Make the ajax request to update the database. Once it has been updated, then change the ui.
