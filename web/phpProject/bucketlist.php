@@ -94,7 +94,7 @@
             echo "</div>";
         }
 
-        if ($abcPriority['priority'] == 0) {
+        if ($abcPriority['priority'] == '0') {
             echo "<div id='newItems'></div>";
             echo "<button onclick='addBucketlistItem()'>NEW</button>";
 
