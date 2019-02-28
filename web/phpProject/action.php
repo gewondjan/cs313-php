@@ -68,6 +68,20 @@
 
     }
 
+    function addNewBucketlistItem() {
+        $db = get_db();
+        $stmt = $db->prepare('INSERT INTO project.bucketlist (user_id, itemDescription, primaryPriority, secondaryPriority) VALUES (:id, "New Item", "0", 0)');
+        $stmt->bindValue(":id", $_SESSION['user_id'], PDO::PARAM_INT);
+        
+        // $stmt->bindValue(":primaryPriority", $abcPriority, PDO::PARAM_STR);
+        // $stmt->bindValue(":secondaryPriority", $numberPriority, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $db->lastInsertId('project.bucketlist_id_seq');
+
+    }
+
+
 
     //Action switch statement
     switch($action) {
@@ -81,6 +95,10 @@
 
         case 'updateBucketlistGrid':
             updateBucketlistGrid();
+            break;
+        
+        case: 'addNewBucketlistItem':
+            addNewBucketlistItem();
             break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';
