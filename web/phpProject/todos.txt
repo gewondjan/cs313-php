@@ -31,3 +31,11 @@ Future:
 Could make it so that the same number priority item cannot be selected
 
 Could add a security check to make sure different users cannot get the todo items of other users.
+
+
+1. add a new item
+2. Delete an item
+3. The todo page
+4. The accomplishments page
+
+J S H 

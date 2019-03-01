@@ -18,7 +18,7 @@
 
 <?php
     $db = get_db();
-    $stmt = $db->prepare('SELECT bl.id, bl.itemdescription, bl.primarypriority, bl.secondarypriority FROM project.users AS u JOIN project.bucketlist AS bl ON u.id = bl.user_id WHERE u.id = :id ORDER BY primarypriority asc, secondarypriority asc;');
+    $stmt = $db->prepare('SELECT bl.id, bl.itemdescription, bl.primarypriority, bl.secondarypriority FROM project.users AS u JOIN project.bucketlist AS bl ON u.id = bl.user_id WHERE u.id = :id ORDER BY primarypriority asc, secondarypriority asc, itemdescription asc;');
     $stmt->bindValue(":id", $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
     $bucketlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -39,18 +39,23 @@
     echo "<div class='row'>";
 
     $bucketlistCoordinateToRow = array();
+    $bucketlistNewItems = array();
     foreach($bucketlist as $row) {
         $row['coordinate'] = $row['primarypriority'] . "-" . $row['secondarypriority'];
-        $bucketlistCoordinateToRow[$row['coordinate']] = $row;
+        if ($row['coordinate'] != '0-0') {
+            $bucketlistCoordinateToRow[$row['coordinate']] = $row;
+        } else {
+            array_push($bucketlistNewItems, $row);
+        }
     }
 
     function addCard($currentItem) {
         echo "<div class='card' id='" . $currentItem['id'] . "'>";
-                echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
-                echo "<b>Priority: </b>";
-                //Primary Priority
-                echo "<label class='priorityLabel' for='abcPriority" . $currentItem['id'] . "'>A-C: </label>";
-                echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
+            echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
+            echo "<b>Priority: </b>";
+            //Primary Priority
+            echo "<label class='priorityLabel' for='abcPriority" . $currentItem['id'] . "'>A-C: </label>";
+            echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
 
                 foreach($abcPriorities as $priority) {
                     $priorityDisplay = ($priority['priority'] == '0') ? '' : $priority['priority'];
@@ -103,12 +108,12 @@
         if ($abcPriority['priority'] = '0'){
             echo "<div id='0-0'>";
             echo "<button class='center-button' onclick='addBucketlistItem()'>NEW</button>";
+            foreach($bucketlistNewItems as $newItem) {
+                addCard($newItem);
+            }
+            echo "</div>";
+        }
             
-
-        }
-        if ($coordinate == '0-0') {
-
-        }
 
         //col close
         echo "</div>";
