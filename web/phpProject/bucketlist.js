@@ -74,9 +74,7 @@ function moveCard(cardId) {
     var numberPriority = $(`#numberPriority${cardId}`).val();
     var coordinate = abcPriority + '-' + numberPriority;
     var cardContent =  $(`#${cardId}`).parent().html();
-    var cardIdOfCardToBump = $(`#${coordinate} :first`).attr("id");
-    var cardToBump = "<div class='card-holder'>" + $(`#${coordinate}`).html() + "</div>";
-    var allNewItems = $(`#newItems`).html();
+
 
     $.ajax({
         method: 'get',        
@@ -89,9 +87,13 @@ function moveCard(cardId) {
         //Remove the card from it's current location
         $(`#${cardId}`).parent().empty();
 
+
+        
         //Logic to bump an existing card to the newItems div if a card is heading for a spot that already has a card
         if ($(`#${coordinate}`).html() !=  "") {
-
+            var cardIdOfCardToBump = $(`#${coordinate} :first`).attr("id");
+            var cardToBump = "<div class='card-holder'>" + $(`#${coordinate}`).html() + "</div>";
+            var allNewItems = $(`#newItems`).html();
             
             $.ajax({
                 method: 'get',        
