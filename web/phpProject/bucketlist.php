@@ -54,7 +54,7 @@
             echo "<div class='card-body'>";
             echo "<div id='descriptionSet-" . $currentItem['id'] . "'>";
             echo "<a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><p class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</p></a>";
-            echo "<button onclick='editBucketlistItemTitle(" . $currentItem['id'] . ")'><i class='fas fa-pencil-alt'></i></button></div>";
+            //echo "<button onclick='editBucketlistItemTitle(" . $currentItem['id'] . ")'><i class='fas fa-pencil-alt'></i></button></div>";
             echo "</div>";
             echo "<div id='descriptionEdit-" . $currentItem['id'] . "' hidden='true'>";
             echo "<input type='text' id='newTitle-" . $currentItem['id'] . "' value='" . $currentItem['itemdescription'] . "'>";
