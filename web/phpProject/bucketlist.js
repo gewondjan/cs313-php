@@ -74,6 +74,9 @@ function moveCard(cardId) {
     var numberPriority = $(`#numberPriority${cardId}`).val();
     var coordinate = abcPriority + '-' + numberPriority;
     var cardContent =  $(`#${cardId}`).parent().html();
+    var cardIdOfCardToBump = $(`#${coordinate} :first`).attr("id");
+    var cardToBump = "<div class='card-holder'>" + $(`#${coordinate}`).html() + "</div>";
+    var allNewItems = $(`#newItems`).html();
 
     $.ajax({
         method: 'get',        
@@ -89,14 +92,12 @@ function moveCard(cardId) {
         //Logic to bump an existing card to the newItems div if a card is heading for a spot that already has a card
         if ($(`#${coordinate}`).html() !=  "") {
 
-            var cardIdOfCardToBump = $(`#${coordinate} :first`).attr("id");
+            
             $.ajax({
                 method: 'get',        
                 url: `action.php?action=updateBucketlistGrid&cardId=${cardIdOfCardToBump}&abcPriority=0&numberPriority=0`,
                 success: function (returnedValues) {
                     //Need to put a holder class around the existing card because we will be placing it in the newItems holder div
-                    var cardToBump = "<div class='card-holder'>" + $(`#${coordinate}`).html() + "</div>";
-                    var allNewItems = $(`#newItems`).html();
                     allNewItems += cardToBump;
                     $(`#newItems`).html(allNewItems);
                     setCardToShowTheseOptions(cardIdOfCardToBump, '0', 0)
