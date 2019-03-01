@@ -62,7 +62,7 @@
             echo "</span>";
 
 
-            echo "<b>Priority: </b>";
+            echo "<br><b>Priority: </b>";
             //Primary Priority
             echo "<label class='priorityLabel' for='abcPriority" . $currentItem['id'] . "'>A-C: </label>";
             echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='abcPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";

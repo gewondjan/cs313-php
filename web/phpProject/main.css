@@ -18,9 +18,9 @@
     text-align: center;
 }
 
-.bucket-list-item:hover {
+/* .bucket-list-item:hover {
     font-size: 2em;
-}
+} */
 
 .bucket-list-item {
     display: inline;
@@ -36,7 +36,7 @@
 }
 
 .icon-button {
-    font-size: .5em;
+    font-size: .75em;
 }
 
 .hidden {
