@@ -49,7 +49,7 @@
         }
     }
 
-    function addCard($currentItem) {
+    function addCard($currentItem, $abcPriorities) {
         echo "<div class='card' id='" . $currentItem['id'] . "'>";
             echo "<div class='card-body'><a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
             echo "<b>Priority: </b>";
@@ -98,7 +98,7 @@
             echo "<div class='card-holder' id='" . $coordinate . "'>";
             if (array_key_exists($coordinate, $bucketlistCoordinateToRow)) {
                 $currentItem = $bucketlistCoordinateToRow[$coordinate];
-                addCard($currentItem);    
+                addCard($currentItem, $abcPriorities);    
             }
 
             //card-holder close outside of the if statement
@@ -109,7 +109,7 @@
             echo "<div id='0-0'>";
             echo "<button class='center-button' onclick='addBucketlistItem()'>NEW</button>";
             foreach($bucketlistNewItems as $newItem) {
-                addCard($newItem);
+                addCard($newItem, $abcPriorities);
             }
             echo "</div>";
         }
