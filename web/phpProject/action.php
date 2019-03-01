@@ -70,7 +70,7 @@
 
     function addNewBucketlistItem() {
         $db = get_db();
-        $stmt = $db->prepare('INSERT INTO project.bucketlist (user_id, itemDescription, primaryPriority, secondaryPriority) VALUES (:id, "New Item", "0", 0)');
+        $stmt = $db->prepare('INSERT INTO project.bucketlist (user_id, itemDescription, primaryPriority, secondaryPriority) VALUES (:id, \'New Item\', \'0\', 0)');
         $stmt->bindValue(":id", $_SESSION['user_id'], PDO::PARAM_INT);
         
         // $stmt->bindValue(":primaryPriority", $abcPriority, PDO::PARAM_STR);
