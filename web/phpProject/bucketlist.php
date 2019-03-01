@@ -105,7 +105,7 @@
             echo "</div>";
         }
 
-        if ($abcPriority['priority'] = '0'){
+        if ($abcPriority['priority'] == '0'){
             echo "<div id='0-0'>";
             
             foreach($bucketlistNewItems as $newItem) {
