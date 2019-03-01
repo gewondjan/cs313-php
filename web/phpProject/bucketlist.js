@@ -48,16 +48,21 @@ function getCardHTML(cardId) {
 
 function setCardToShowTheseOptions(cardId, letter, number) {
         //Clear all selected values
+
+        console.log("in here for cardID: " + cardId);
+
         $(`#numberPriority${cardId} > option`).attr("selected", "false");
         $(`#abcPriority${cardId} > option`).attr("selected", "false");
 
-        //Update the abc and number priorities
-        $(`#abcOption${letter}-${cardId}`).attr("selected", "selected");
-        $(`#numberOption${number}-${cardId}`).attr("selected", "selected");
+        console.log("just made all the selections false");
 
-        //Make sure the correct values are showing.
-        $(`#abcPriority${cardId}`).val(letter);
-        $(`#numberPriority${cardId}`).val(number);
+        // //Update the abc and number priorities
+        // $(`#abcOption${letter}-${cardId}`).attr("selected", "selected");
+        // $(`#numberOption${number}-${cardId}`).attr("selected", "selected");
+
+        // //Make sure the correct values are showing.
+        // $(`#abcPriority${cardId}`).val(letter);
+        // $(`#numberPriority${cardId}`).val(number);
 
 
 }
