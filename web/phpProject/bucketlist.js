@@ -1,9 +1,6 @@
 'using strict'
 
 function addBucketlistItem() {
-
-    alert("adding item..");
-
     $.ajax({
         method: 'get',
         url: 'action.php?action=addNewBucketlistItem',
@@ -12,7 +9,6 @@ function addBucketlistItem() {
             var existingHTML = $("#newItems").html();
             var appendedHTML = existingHTML + getCardHTML(returnedValue);
             $("#newItems").html(appendedHTML);
-
         }
 
     });
