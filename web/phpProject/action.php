@@ -97,7 +97,7 @@
             updateBucketlistGrid();
             break;
         
-        case: 'addNewBucketlistItem':
+        case 'addNewBucketlistItem':
             addNewBucketlistItem();
             break;
         default:
