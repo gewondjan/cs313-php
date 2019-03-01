@@ -70,14 +70,14 @@
                 //Secondard Priority
                 echo "<label class='priorityLabel' for='numberPriority" . $currentItem['id'] . "'>1-10: </label>";
                 echo "<select onchange='moveCard(" . $currentItem['id'] . ")' id='numberPriority" . $currentItem['id'] . "' class='priority prioritySelect'>";
+                
                 for ($i = 0; $i <= 10; $i++){
                     echo "<option class='priority' id='numberOption" . $i . "-" . $currentItem['id'] . "'";
                     if ($i == $currentItem['secondarypriority'])
                     {
                         echo "selected='selected'";
                     }
-                    echo ">";
-                    echo ($i == 0 ) ?  '' : $i;
+                    echo ($i == 0 ) ?  "value=0>" : ">". $i;
                     echo "</option>";
                 }
                 
@@ -93,7 +93,7 @@
  
     foreach($abcPriorities as $abcPriority) {
         echo "<div class='col'>";
-        for ($it = 1; $it <= 10; $it++) {
+        for ($it = 0; $it <= 10; $it++) {
             $coordinate = $abcPriority['priority'] . "-" . $it;
             echo "<div class='card-holder' id='" . $coordinate . "'>";
             if (array_key_exists($coordinate, $bucketlistCoordinateToRow)) {
