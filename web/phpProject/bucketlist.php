@@ -106,12 +106,13 @@
         }
 
         if ($abcPriority['priority'] == '0'){
-            
+            echo "<div id='newItems'>";
             foreach($bucketlistNewItems as $newItem) {
                 echo "<div class='card-holder'>";
                 addCard($newItem, $abcPriorities);
                 echo "</div>";
             }
+            echo "</div>";
             echo "<button class='center-button' onclick='addBucketlistItem()'>NEW</button>";
         }
             

@@ -46,6 +46,22 @@ function getCardHTML(cardId) {
 }
 
 
+function setCardToShowTheseOptions(cardId, letter, number) {
+        //Clear all selected values
+        $(`#numberPriority${cardId} > option`).attr("selected", "false");
+        $(`#abcPriority${cardId} > option`).attr("selected", "false");
+
+        //Update the abc and number priorities
+        $(`#abcOption${letter}-${cardId}`).attr("selected", "selected");
+        $(`#numberOption${number}-${cardId}`).attr("selected", "selected");
+
+        //Make sure the correct values are showing.
+        $(`#abcPriority${cardId}`).val(letter);
+        $(`#numberPriority${cardId}`).val(number);
+
+
+}
+
 
 function moveCard(cardId) {
 
@@ -67,32 +83,36 @@ function moveCard(cardId) {
         //Remove the card from it's current location
         $(`#${cardId}`).parent().empty();
 
+        //Logic to bump an existing card to the newItems div if a card is heading for a spot that already has a card
+        if ($(`#${coordinate}`).html() !=  "") {
 
-        //Can add a conditional here where I will handle the case of adding a card in the same place as an existing card.
+            var cardIdOfCardToBump = $(`#${coordinate} :first`).attr("id");
+            $.ajax({
+                method: 'get',        
+                url: `action.php?action=updateBucketlistGrid&cardId=${cardIdOfCardToBump}&abcPriority=0&numberPriority=0`,
+                success: function (returnedValues) {
+                    //Need to put a holder class around the existing card because we will be placing it in the newItems holder div
+                    var cardToBump = "<div class='card-holder'>" + $(`#${coordinate}`).html() + "</div>";
+                    var allNewItems = $(`#newItems`).html();
+                    allNewItems += cardToBump;
+                    $(`#newItems`).html(allNewItems);
+                    setCardToShowTheseOptions(cardIdOfCardToBump, '0', 0)
+                }
+            
+        });
+        
+        }
 
+        
         //Insert the card content to the new location
         $(`#${coordinate}`).html(cardContent);
-
-        //Clear all selected values
-        $(`#numberPriority${cardId} > option`).attr("selected", "false");
-        $(`#abcPriority${cardId} > option`).attr("selected", "false");
-
-        //Update the abc and number priorities
-        $(`#abcOption${abcPriority}-${cardId}`).attr("selected", "selected");
-        $(`#numberOption${numberPriority}-${cardId}`).attr("selected", "selected");
-
-        //Make sure the correct values are showing.
-        $(`#abcPriority${cardId}`).val(abcPriority);
-        $(`#numberPriority${cardId}`).val(numberPriority);
-
-        // alert($(`#${coordinate}`).html());
+       
+        //Make the card display right
+        setCardToShowTheseOptions(cardId, abcPriority, numberPriority);
     
     }    
     
     
 });
-    
-    
-
     
 }
