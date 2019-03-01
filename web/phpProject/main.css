@@ -34,3 +34,11 @@
     text-align: center;
 
 }
+
+.icon-button {
+    font-size: .5em;
+}
+
+.hidden {
+    display: none;
+}

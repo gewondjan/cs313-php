@@ -124,13 +124,13 @@ function moveCard(cardId) {
 }
 
 function editBucketlistItemTitle(cardId) {
-    $(`#descriptionSet-${cardId}`).hide();
-    $(`#descriptionEdit-${cardId}`).show();
+    $(`#descriptionSet-${cardId}`).addClass("hidden");
+    $(`#descriptionEdit-${cardId}`).removeClass("hidden");
 
 }
 
 function submitBucketlistTitle(cardId) {
-    $(`#descriptionSet-${cardId}`).show();
-    $(`#descriptionEdit-${cardId}`).hide();
+    $(`#descriptionSet-${cardId}`).removeClass("hidden");
+    $(`#descriptionEdit-${cardId}`).addClass("hidden");
 
 }
