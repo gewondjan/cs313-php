@@ -113,8 +113,8 @@ function moveCard(cardId) {
         $(`#${coordinate}`).html(cardContent);
        
         //Make the card display right
-        $(`#numberPriority${cardId} > option`).attr("selected", "false");
-        $(`#abcPriority${cardId} > option`).attr("selected", "false");
+        $(`#numberPriority${cardId} > option`).attr('selected', false);
+        $(`#abcPriority${cardId} > option`).attr('selected', false);
         // setCardToShowTheseOptions(cardId, abcPriority, numberPriority);
     
     }    
