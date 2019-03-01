@@ -22,6 +22,10 @@
     font-size: 2em;
 }
 
+.bucket-list-item {
+    display: inline;
+}
+
 .no-underline-link {
     text-decoration: none;
 }
