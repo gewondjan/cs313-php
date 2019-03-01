@@ -105,7 +105,7 @@ function moveCard(cardId) {
                     setCardToShowTheseOptions(cardIdOfCardToBump, '0', 0)
                 }
             
-        });
+            });
         
         }
 
@@ -121,4 +121,16 @@ function moveCard(cardId) {
     
 });
     
+}
+
+function editBucketlistItemTitle(cardId) {
+    $(`#descriptionSet-${cardId}`).hide();
+    $(`#descriptionEdit-${cardId}`).show();
+
+}
+
+function submitBucketlistTitle(cardId) {
+    $(`#descriptionSet-${cardId}`).show();
+    $(`#descriptionEdit-${cardId}`).hide();
+
 }
