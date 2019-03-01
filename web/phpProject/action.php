@@ -81,7 +81,10 @@
 
     }
 
-    function updateBucketlistTitle($bucketlistId = $_GET['bucketlistId'], $newTitle = $_GET['newTitle']) {
+    function updateBucketlistTitle() {
+        $bucketlistId = $_GET['bucketlistId'];
+        $newTitle = $_GET['newTitle'];
+        
         $db = get_db();
         $stmt = $db->prepare('UPDATE project.bucketlist SET itemDescription = :newDescription WHERE id = :id');
         $stmt->bindValue(":newDescription", $newTitle, PDO::PARAM_STR);
