@@ -51,18 +51,16 @@ function setCardToShowTheseOptions(cardId, letter, number) {
 
         console.log("in here for cardID: " + cardId);
 
-        $(`#numberPriority${cardId} > option`).attr("selected", "false");
-        $(`#abcPriority${cardId} > option`).attr("selected", "false");
+        $(`#numberPriority${cardId} > option`).attr("selected", false);
+        $(`#abcPriority${cardId} > option`).attr("selected", false);
 
-        console.log("just made all the selections false");
+        //Update the abc and number priorities
+        $(`#abcOption${letter}-${cardId}`).attr("selected", "selected");
+        $(`#numberOption${number}-${cardId}`).attr("selected", "selected");
 
-        // //Update the abc and number priorities
-        // $(`#abcOption${letter}-${cardId}`).attr("selected", "selected");
-        // $(`#numberOption${number}-${cardId}`).attr("selected", "selected");
-
-        // //Make sure the correct values are showing.
-        // $(`#abcPriority${cardId}`).val(letter);
-        // $(`#numberPriority${cardId}`).val(number);
+        //Make sure the correct values are showing.
+        $(`#abcPriority${cardId}`).val(letter);
+        $(`#numberPriority${cardId}`).val(number);
 
 
 }
@@ -113,9 +111,7 @@ function moveCard(cardId) {
         $(`#${coordinate}`).html(cardContent);
        
         //Make the card display right
-        $(`#numberPriority${cardId} > option`).attr('selected', false);
-        $(`#abcPriority${cardId} > option`).attr('selected', false);
-        // setCardToShowTheseOptions(cardId, abcPriority, numberPriority);
+        setCardToShowTheseOptions(cardId, abcPriority, numberPriority);
     
     }    
     
