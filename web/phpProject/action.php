@@ -142,7 +142,6 @@
             deleteBucketlistItem();
             break;
         case 'addCompletedDateToTodo':
-            
             //date("Y-M-D", time())
             updateTodoCompletedDate("done");
             break;
@@ -150,6 +149,9 @@
             updateTodoCompletedDate(null);
             break;
         case 'deleteTodo':
+        header("Location: bucketlist.php");
+        die();
+
             deleteTodo();
             break;
         default:
