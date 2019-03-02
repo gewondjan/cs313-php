@@ -61,3 +61,11 @@
     font-size: 2em;
 
 }
+
+.extra-large-icon {
+    font-size: 6em;
+}
+
+.todo-card * {
+    display: inline;
+}

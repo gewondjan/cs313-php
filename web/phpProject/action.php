@@ -126,6 +126,16 @@
         $stmt->execute();
     }
 
+    function addNewTodo() {
+        $db = get_db();
+        $stmt = $db->prepare('INSERT INTO project.todos (bucketlistId, description) VALUES (:id, \'\')');
+        $stmt->bindValue(":id", $_GET['bucketlistId'], PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $db->lastInsertId('project.todos_id_seq');
+
+    }
+
 
     //Action switch statement
     switch($action) {
@@ -161,6 +171,9 @@
             break;
         case 'setNewTodoTitle':
             setNewTodoTitle();
+            break;
+        case 'addNewTodo':
+            addNewTodo();
             break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';
