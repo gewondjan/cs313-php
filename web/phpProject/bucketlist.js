@@ -133,8 +133,7 @@ function submitBucketlistTitle(cardId) {
         method: 'get',
         url: `action.php?action=updateBucketlistTitle&bucketlistId=${cardId}&newTitle=${newTitle}`,
         success: function(returnedValue) {
-            alert(returnedValue);
-            $(`#descriptionSet-${cardId} > h4`).html(returnedValue);
+            $(`#descriptionSet-${cardId} > h4`).html(newTitle);
             $(`#descriptionSet-${cardId}`).removeClass("hidden");
             $(`#descriptionEdit-${cardId}`).addClass("hidden");
         }

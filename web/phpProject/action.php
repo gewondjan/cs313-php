@@ -90,8 +90,6 @@
         $stmt->bindValue(":newDescription", $newTitle, PDO::PARAM_STR);
         $stmt->bindValue(":id", $bucketlistId, PDO::PARAM_INT);
         $stmt->execute();
-
-        return $newTitle;
     }
 
 
