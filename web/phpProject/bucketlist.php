@@ -54,12 +54,12 @@
             echo "<div class='card-body'>";
            echo "<span id='descriptionSet-" . $currentItem['id'] . "'>";
             echo "<a class='no-underline-link' href='todos.php?bucketlistItemId=" . $currentItem['id'] . "'><h4 class='card-title bucket-list-item'>" . $currentItem['itemdescription'] . "</h4></a>";
-            echo "<button class='icon-button' onclick='editBucketlistItemTitle(" . $currentItem['id'] . ")'><i class='fas fa-pencil-alt'></i></button>";
+            echo "<button class='icon-button' onclick='editBucketlistItemTitle(" . $currentItem['id'] . ")'><i class='fas fa-pencil-alt'></i></button>&nbsp;&nbsp;";
             echo "<button class='icon-button' onclick='deleteBucketlistItem(" . $currentItem['id'] . ")'><i class='fas fa-times'></i></button>";
             echo "</span>";
             echo "<span id='descriptionEdit-" . $currentItem['id'] . "' class='hidden'>";
             echo "<input type='text' id='newTitle-" . $currentItem['id'] . "' value='" . $currentItem['itemdescription'] . "'>";
-            echo "<button class='icon-button' onclick='submitBucketlistTitle(" . $currentItem['id'] . ")'><i class='fas fa-check-square'></i></button>";
+            echo "<button class='icon-button' onclick='submitBucketlistTitle(" . $currentItem['id'] . ")'><i class='fas fa-check-square'></i></button>&nbsp;&nbsp;";
             echo "<button class='icon-button' onclick='deleteBucketlistItem(" . $currentItem['id'] . ")'><i class='fas fa-times'></i></button>";
             echo "</span>";
 

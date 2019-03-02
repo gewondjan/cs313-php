@@ -34,7 +34,5 @@ Could add a security check to make sure different users cannot get the todo item
 
 
 
-1.5 edit the title of an item
-2. Delete an item
 3. The todo page
 4. The accomplishments page
