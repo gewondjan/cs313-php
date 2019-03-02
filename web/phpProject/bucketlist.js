@@ -7,7 +7,6 @@ function addBucketlistItem() {
         method: 'get',
         url: 'action.php?action=addNewBucketlistItem',
         success: function(returnedValue) {
-            alert(returnedValue);
             var existingHTML = $("#newItems").html();
             var appendedHTML = existingHTML + getCardHTML(returnedValue);
             $("#newItems").html(appendedHTML);
