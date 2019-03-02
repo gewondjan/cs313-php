@@ -30,9 +30,9 @@ foreach($todos as $todo) {
     
     echo "<div class='card'><div class='card-body'>";
     if ($todo['completeddate'] == null) {
-        echo "<i id='checkbox-" . $todo['id'] . "' class="far fa-square" onclick='checkTodo(" . $todo['id'] . ")'></i>";
+        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-square' onclick='checkTodo(" . $todo['id'] . ")'></i>";
     } else {
-        echo "<i id='checkbox-" . $todo['id'] . "' class="far fa-check-square" onclick='uncheckTodo(" . $todo['id'] . ")'></i>";
+        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-check-square' onclick='uncheckTodo(" . $todo['id'] . ")'></i>";
     }
     echo "<h4>" . $todo['description'] . "</h4>";
 
