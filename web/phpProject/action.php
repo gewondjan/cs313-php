@@ -100,6 +100,21 @@
 
     }
 
+    function updateTodoCompletedDate($newCompletedDate) {
+        $db = get_db();
+        $stmt = $db->prepare('UPDATE project.todos SET completeddate = :completeddate WHERE id = :id');
+        $stmt->bindValue(":id", $_GET['todoId'], PDO::PARAM_INT);
+        $stmt->bindValue(":completeddate", $newCompletedDate, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    function deleteTodo() {
+        $db = get_db();
+        $stmt = $db->prepare('DELETE FROM project.todos WHERE id = :id');
+        $stmt->bindValue(":id", $_GET['todoId'], PDO::PARAM_INT);
+        $stmt->execute();
+
+    }
     //Action switch statement
     switch($action) {
         case 'signIn':
@@ -122,6 +137,15 @@
             break;
         case 'deleteBucketlistItem':
             deleteBucketlistItem();
+            break;
+        case 'addCompletedDateToTodo':
+            updateTodoCompletedDate(date("Y-M-D", time()));
+            break;
+        case 'removeCompletedDateFromTodo':
+            updateTodoCompletedDate(null);
+            break;
+        case 'deleteTodo':
+            deleteTodo();
             break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';
