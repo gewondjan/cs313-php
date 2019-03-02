@@ -53,7 +53,7 @@ function editTodo(todoId) {
     var editorHTML = `<input type='text' id='todo-editor-${todoId}' value='${todoValue}'>
     <button onclick='setTodo(${todoId})'><i class='fas fa-check-square'></button>`;
     $(`#todo-title-${todoId}`).parent().html(editorHTML);
-
+}
 function setTodo(todoId) {
     var newTitle = $(`#todo-editor-${todoId}`).val();
     $.ajax({
