@@ -1,10 +1,6 @@
 'using strict'
 
-function editBucketlistItemTitle(cardId) {
-    $(`#descriptionSet-${cardId}`).addClass("hidden");
-    $(`#descriptionEdit-${cardId}`).removeClass("hidden");
 
-}
 
 function addBucketlistItem() {
     $.ajax({
@@ -124,14 +120,18 @@ function moveCard(cardId) {
     
 }
 
+function editBucketlistItemTitle(cardId) {
+    $(`#descriptionSet-${cardId}`).addClass("hidden");
+    $(`#descriptionEdit-${cardId}`).removeClass("hidden");
 
+}
 
 function submitBucketlistTitle(cardId) {
     let newTitle = $(`#descriptionEdit-${cardId} > input`).val();
 
     $.ajax({
-        method = 'get',
-        url = `action.php?action=updateBucketlistTitle&bucketlistId=${cardId}&newTitle=${newTitle}`,
+        method: 'get',
+        url: `action.php?action=updateBucketlistTitle&bucketlistId=${cardId}&newTitle=${newTitle}`,
         success: function(returnedValue) {
             $(`#descriptionSet-${cardId} > h4`).html(returnedValue);
             $(`#descriptionSet-${cardId}`).removeClass("hidden");
