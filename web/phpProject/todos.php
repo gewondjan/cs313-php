@@ -28,16 +28,18 @@ echo "<h1>Todos for " . $todos[0]['itemdescription'] . "</h1>";
 echo "<div class='row'><div class='col'>";
 foreach($todos as $todo) {
     
-    echo "<div class='card'><div class='card-body'>";
+    echo "<div class='card'><div class='card-body'><span>";
     if ($todo['completeddate'] == null) {
-        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-square' onclick='checkTodo(" . $todo['id'] . ")'></i>";
+        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-square' onclick='checkTodo(" . $todo['id'] . ")'></i>&nbsp;";
     } else {
-        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-check-square' onclick='uncheckTodo(" . $todo['id'] . ")'></i>";
+        echo "<i id='checkbox-" . $todo['id'] . "' class='far fa-check-square' onclick='uncheckTodo(" . $todo['id'] . ")'></i>&nbsp;";
     }
-    echo "<h4>" . $todo['description'] . "</h4>";
+    echo "<div class='todo'><h4>" . $todo['description'] . "</h4><div>";
+    echo "<button class='icon-button' onclick='deleteTodo(" . $todo['id'] . ")'><i class='fas fa-times'></i></button>";
+    
 
-    //card and card-body
-    echo "</div></div>";
+    //span, card-body, card
+    echo "</span></div></div>";
 }
 //Row and column
 echo "</div></div>";

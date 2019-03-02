@@ -11,3 +11,10 @@ function uncheckTodo(todoId) {
 
 
 }
+
+
+
+function deleteTodo(todoId) {
+    alert('delete todo');
+
+}

@@ -1,3 +1,15 @@
+/* We don't want any underlines */
+
+* {
+    text-decoration: none;
+}
+
+.todo {
+
+    width: 50%;
+
+}
+
 .priority {
 
     width: 3em;
