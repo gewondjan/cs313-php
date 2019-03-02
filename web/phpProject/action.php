@@ -114,6 +114,9 @@
         $stmt->bindValue(":id", $_GET['todoId'], PDO::PARAM_INT);
         $stmt->execute();
 
+        header("Location: bucketlist.php");
+        die();
+
     }
     //Action switch statement
     switch($action) {
