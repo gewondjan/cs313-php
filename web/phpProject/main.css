@@ -37,6 +37,8 @@
 
 .icon-button {
     font-size: .75em;
+    border-radius: 30px;
+
 }
 
 .hidden {

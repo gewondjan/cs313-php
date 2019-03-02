@@ -91,7 +91,14 @@
         $stmt->bindValue(":id", $bucketlistId, PDO::PARAM_INT);
         $stmt->execute();
     }
+    
+    function deleteBucketlistItem() {
+        $db = get_db();
+        $stmt = $db->prepare('DELETE FROM project.bucketlist WHERE id = :id');
+        $stmt->bindValue(":id", $_GET['bucketlistId'], PDO::PARAM_INT);
+        $stmt->execute();
 
+    }
 
     //Action switch statement
     switch($action) {
@@ -112,6 +119,9 @@
             break;
         case 'updateBucketlistTitle':
             updateBucketlistTitle();
+            break;
+        case 'deleteBucketlistItem':
+            deleteBucketlistItem();
             break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';

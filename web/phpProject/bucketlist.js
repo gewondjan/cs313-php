@@ -141,3 +141,14 @@ function submitBucketlistTitle(cardId) {
 
 
 }
+
+function deleteBucketlistItem(cardId) {
+    $.ajax({
+        method: 'get',
+        url: `action.php?action=deleteBucketlistItem&bucketlistId=${cardId}`,
+        success: function(returnedValue) {
+            $(`#${cardId}`).remove();
+        }
+    });
+
+}
