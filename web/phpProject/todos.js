@@ -47,3 +47,23 @@ function deleteTodo(todoId) {
         }
     });
 }
+
+function editTodo(todoId) {
+    var todoValue = $(`#todo-title-${todoId}`).html();
+    var editorHTML = `<input type='text' id='todo-editor-${todoId}' value='${todoValue}'>
+    <button onclick='setTodo(${todoId})'><i class='fas fa-check-square'></button>`;
+    $(`#todo-title-${todoId}`).parent().html(editorHTML);
+
+function setTodo(todoId) {
+    var newTitle = $(`#todo-editor-${todoId}`).val();
+    $.ajax({
+        method: 'get',
+        url: `action.php?action=setNewTodoTitle&todoId=${todoId}&newTitle=${newTitle}`,
+        success: function(returnedValue) {
+            var setValueHTML = `<h4 id='todo-title-${todoId} onclick='editTodo(${todoId})'>${newTitle}</h4>`;
+            $(`#todo-editor-${todoId}`).parent().html(setValueHTML);
+        }
+    });
+
+
+}

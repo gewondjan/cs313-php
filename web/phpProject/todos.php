@@ -20,8 +20,6 @@
     $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-
-
 echo "<h1>Todos for " . $todos[0]['itemdescription'] . "</h1>";
 
 
@@ -34,7 +32,7 @@ foreach($todos as $todo) {
     } else {
         echo "<i id='checkbox-" . $todo['id'] . "' class='large-icon far fa-check-square' onclick='uncheckTodo(" . $todo['id'] . ")'></i>&nbsp;";
     }
-    echo "<div class='todo'><h4>" . $todo['description'] . "</h4></div>";
+    echo "<div class='todo'><h4 id='todo-title-" . $todo['id'] . "' onclick='editTodo(" . $todo['id'] . ")'>" . $todo['description'] . "</h4></div>";
     echo "<button class='icon-button' onclick='deleteTodo(" . $todo['id'] . ")'><i class='fas fa-times'></i></button>";
     
 

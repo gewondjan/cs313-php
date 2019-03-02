@@ -116,6 +116,17 @@
 
     }
 
+
+
+    function setNewTodoTitle() {
+        $db = get_db();
+        $stmt = $db->prepare('UPDATE project.todos SET description = :newTitle WHERE id = :id');
+        $stmt->bindValue(":id", $_GET['todoId'], PDO::PARAM_INT);
+        $stmt->bindValue(":newTitle", $_GET['newTitle'] PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+
     //Action switch statement
     switch($action) {
         case 'signIn':
@@ -147,6 +158,9 @@
             break;
         case 'deleteTodo':
             deleteTodo();
+            break;
+        case 'setNewTodoTitle':
+            setNewTodoTitle();
             break;
         default:
             echo 'Error: something went wrong. You are in the default case of the action.php switch statement';
