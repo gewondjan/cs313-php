@@ -22,10 +22,10 @@
     $stmtForBucketListItem = $db->prepare('SELECT itemdescription FROM project.bucketlist WHERE id = :id');
     $stmtForBucketListItem->bindValue(":id", $_GET['bucketlistItemId'], PDO::PARAM_INT);
     $stmt->execute();
-    $bucketlistItemTitle = $stmt->fetch(PDO::FETCH_ASSOC);
+    $bucketlistItemTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-echo "<h1>Todos for " . $bucketlistItemTitle['itemdescription'] . "</h1>";
+echo "<h1>Todos for " . $bucketlistItemTitle[0]['itemdescription'] . "</h1>";
 
 
 echo "<div class='row'><div class='col' id='allTodosHolder'>";
