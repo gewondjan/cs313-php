@@ -139,7 +139,9 @@
             deleteBucketlistItem();
             break;
         case 'addCompletedDateToTodo':
-            updateTodoCompletedDate(date("Y-M-D", time()));
+            
+            //date("Y-M-D", time())
+            updateTodoCompletedDate("done");
             break;
         case 'removeCompletedDateFromTodo':
             updateTodoCompletedDate(null);
