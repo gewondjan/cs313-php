@@ -21,8 +21,8 @@
 
     $stmtForBucketListItem = $db->prepare('SELECT itemdescription FROM project.bucketlist WHERE id = :id');
     $stmtForBucketListItem->bindValue(":id", $_GET['bucketlistItemId'], PDO::PARAM_INT);
-    $stmt->execute();
-    $bucketlistItemTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmtForBucketListItem->execute();
+    $bucketlistItemTitle = $stmtForBucketListItem->fetchAll(PDO::FETCH_ASSOC);
 
 
 echo "<h1>Todos for " . $bucketlistItemTitle[0]['itemdescription'] . "</h1>";
