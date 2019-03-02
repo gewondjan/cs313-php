@@ -77,7 +77,7 @@
         // $stmt->bindValue(":secondaryPriority", $numberPriority, PDO::PARAM_INT);
         $stmt->execute();
 
-        return $db->lastInsertId('project.bucketlist_id_seq');
+        echo $db->lastInsertId('project.bucketlist_id_seq');
 
     }
 
@@ -132,7 +132,7 @@
         $stmt->bindValue(":id", $_GET['bucketlistId'], PDO::PARAM_INT);
         $stmt->execute();
 
-        return $db->lastInsertId('project.todos_id_seq');
+        echo $db->lastInsertId('project.todos_id_seq');
 
     }
 
