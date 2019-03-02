@@ -94,6 +94,12 @@
     
     function deleteBucketlistItem() {
         $db = get_db();
+
+        $stmtDeleteTodosFirst = $db->prepare('DELETE FROM project.todos WHERE bucketlistid = :id');
+        $stmtDeleteTodosFirst->bindValue(":id", $_GET['bucketlistId'], PDO::PARAM_INT);
+        $stmtDeleteTodosFirst->execute();
+        
+        //Now we can delete the bucketlist item
         $stmt = $db->prepare('DELETE FROM project.bucketlist WHERE id = :id');
         $stmt->bindValue(":id", $_GET['bucketlistId'], PDO::PARAM_INT);
         $stmt->execute();
