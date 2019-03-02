@@ -20,12 +20,23 @@ function getCardHTML(cardId) {
     var cardHTML = "<div class='card-holder'>";
     cardHTML += "<div class='card' id='" + cardId + "'>";
     cardHTML += "<div class='card-body'>";
+    cardHTML += `<span id='descriptionSet-${cardId}'>
+    <a class='no-underline-link' href='todos.php?bucketlistItemId=${cardId}'><h4 class='card-title bucket-list-item'>New Item</h4></a>
+            <button class='icon-button' onclick='editBucketlistItemTitle(${cardId})'><i class='fas fa-pencil-alt'></i></button>&nbsp;&nbsp;
+            <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
+            </span>
+            <span id='descriptionEdit-${cardId}' class='hidden'>
+            <input type='text' id='newTitle-${cardId}' value='New Item'>
+            <button class='icon-button' onclick='submitBucketlistTitle(${cardId})'><i class='fas fa-check-square'></i></button>&nbsp;&nbsp;
+            <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
+            </span>`;
+
     cardHTML += "<a class='no-underline-link' href='todos.php?bucketlistItemId=2'><h4 class='card-title bucket-list-item'>Untitled</h4></a>";
     cardHTML += "<b>Priority: </b>";
     cardHTML += "<label class='priorityLabel' for='abcPriority" + cardId + "'>A-C: </label>";
     cardHTML += "<select onchange='moveCard(2)' id='abcPriority" + cardId + "' class='priority prioritySelect'>";
-    cardHTML += "<option class='priority' id='abcOption0-" + cardId + "' value='0'></option>";
-    cardHTML += "<option class='priority' id='abcOptionA-2' value='A' selected='selected'>A</option>";
+    cardHTML += "<option class='priority' id='abcOption0-" + cardId + "' value='0' selected='selected'></option>";
+    cardHTML += "<option class='priority' id='abcOptionA-2' value='A'>A</option>";
     cardHTML += "<option class='priority' id='abcOptionB-" + cardId + "' value='B'>B</option>";
     cardHTML += "<option class='priority' id='abcOptionC-" + cardId + "' value='C'>C</option>";
     cardHTML += "</select>&nbsp;&nbsp;";
