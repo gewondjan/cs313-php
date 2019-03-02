@@ -122,7 +122,7 @@
         $db = get_db();
         $stmt = $db->prepare('UPDATE project.todos SET description = :newTitle WHERE id = :id');
         $stmt->bindValue(":id", $_GET['todoId'], PDO::PARAM_INT);
-        $stmt->bindValue(":newTitle", $_GET['newTitle'] PDO::PARAM_STR);
+        $stmt->bindValue(":newTitle", $_GET['newTitle'], PDO::PARAM_STR);
         $stmt->execute();
     }
 
