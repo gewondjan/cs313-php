@@ -77,7 +77,7 @@ function addNewTodo(bucketlistId) {
             var newTodo = `
             <div class='card' id='todo-${newTodoId}'>
                 <div class='card-body todo-card'>
-                    <i id='checkbox-${newTodoId} class='large-icon far fa-square' onclick='checkTodo(${newTodoId})'></i>&nbsp;
+                    <i id='checkbox-${newTodoId}' class='large-icon far fa-square' onclick='checkTodo(${newTodoId})'></i>&nbsp;
                     <div class='todo'>
                         <input type='text' id='todo-editor-${newTodoId}' value=''>
                         <button onclick='setTodo(${newTodoId})'><i class='fas fa-check-square'></i></button>
