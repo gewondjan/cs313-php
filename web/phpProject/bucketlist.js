@@ -86,8 +86,6 @@ function moveCard(cardId) {
         
         //Remove the card from it's current location
         $(`#${cardId}`).parent().empty();
-
-
         
         //Logic to bump an existing card to the newItems div if a card is heading for a spot that already has a card
         if ($(`#${coordinate}`).html() !=  "") {
