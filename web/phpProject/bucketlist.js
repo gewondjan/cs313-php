@@ -127,12 +127,13 @@ function editBucketlistItemTitle(cardId) {
 }
 
 function submitBucketlistTitle(cardId) {
-    let newTitle = $(`#descriptionEdit-${cardId} > input`).val();
+    var newTitle = $(`#descriptionEdit-${cardId} > input`).val();
 
     $.ajax({
         method: 'get',
         url: `action.php?action=updateBucketlistTitle&bucketlistId=${cardId}&newTitle=${newTitle}`,
         success: function(returnedValue) {
+            alert(newTitle);
             $(`#descriptionSet-${cardId} > h4`).html(newTitle);
             $(`#descriptionSet-${cardId}`).removeClass("hidden");
             $(`#descriptionEdit-${cardId}`).addClass("hidden");
