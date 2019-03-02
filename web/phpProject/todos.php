@@ -25,7 +25,7 @@
     $bucketlistItemTitle = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-echo "<h1>Todos for " . $bucketlistItemTitle . "</h1>";
+echo "<h1>Todos for " . $bucketlistItemTitle['itemdescription'] . "</h1>";
 
 
 echo "<div class='row'><div class='col' id='allTodosHolder'>";
