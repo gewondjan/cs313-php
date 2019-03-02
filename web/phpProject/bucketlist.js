@@ -1,5 +1,11 @@
 'using strict'
 
+function editBucketlistItemTitle(cardId) {
+    $(`#descriptionSet-${cardId}`).addClass("hidden");
+    $(`#descriptionEdit-${cardId}`).removeClass("hidden");
+
+}
+
 function addBucketlistItem() {
     $.ajax({
         method: 'get',
@@ -12,9 +18,6 @@ function addBucketlistItem() {
         }
 
     });
-
-
-
 
 }
 
@@ -121,11 +124,7 @@ function moveCard(cardId) {
     
 }
 
-function editBucketlistItemTitle(cardId) {
-    $(`#descriptionSet-${cardId}`).addClass("hidden");
-    $(`#descriptionEdit-${cardId}`).removeClass("hidden");
 
-}
 
 function submitBucketlistTitle(cardId) {
     let newTitle = $(`#descriptionEdit-${cardId} > input`).val();
