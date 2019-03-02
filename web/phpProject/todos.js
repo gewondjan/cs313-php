@@ -75,7 +75,7 @@ function addNewTodo(bucketlistId) {
         success: function(newTodoId) {
             var currentTodos = $(`#allTodosHolder`).html();
             var newTodo = `
-            <div class='card' id='todo-${newTodoId}>
+            <div class='card' id='todo-${newTodoId}'>
                 <div class='card-body todo-card'>
                     <i id='checkbox-${newTodoId} class='large-icon far fa-square' onclick='checkTodo(${newTodoId})'></i>&nbsp;
                     <div class='todo'>
