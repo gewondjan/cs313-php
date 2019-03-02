@@ -74,11 +74,20 @@ function addNewTodo(bucketlistId) {
         url: `action.php?action=addNewTodo&bucketlistId=${bucketlistId}`,
         success: function(newTodoId) {
             var currentTodos = $(`#allTodosHolder`).html();
-            var newTodo = `<div class='card' id='todo-${newTodoId}><div class='card-body todo-card'>
-            <i id='checkbox-${newTodoId} class='large-icon far fa-square' onclick='checkTodo(${newTodoId})'></i>&nbsp;
-            <div class='todo'><input type='text' id='todo-editor-${newTodoId}' value=''>
-            <button onclick='setTodo(${newTodoId})'><i class='fas fa-check-square'></button></div>
-            <button class='icon-button' onclick='deleteTodo(${newTodoId})'><i class='fas fa-times'></i></button></div></div>`;
+            var newTodo = `
+            <div class='card' id='todo-${newTodoId}>
+                <div class='card-body todo-card'>
+                    <i id='checkbox-${newTodoId} class='large-icon far fa-square' onclick='checkTodo(${newTodoId})'></i>&nbsp;
+                    <div class='todo'>
+                        <input type='text' id='todo-editor-${newTodoId}' value=''>
+                        <button onclick='setTodo(${newTodoId})'><i class='fas fa-check-square'></i></button>
+                    </div>
+                    <button class='icon-button' onclick='deleteTodo(${newTodoId})'><i class='fas fa-times'></i></button>
+                </div>
+            </div>`;
+
+            alert(currentTodos);
+            
             $(`#allTodosHolder`).html(newTodo + currentTodos);
 
             $(`#todo-editor-${newTodoId}`).focus();
