@@ -42,7 +42,7 @@ function getCardHTML(cardId) {
     cardHTML += "<label class='priorityLabel' for='numberPriority" + cardId + "'>1-10: </label>";
     cardHTML += "<select onchange='moveCard(" + cardId + ")' id='numberPriority" + cardId + "' class='priority prioritySelect'>";
     
-    cardHTML += "<option class='priority' id='numberOption0-" + cardId + "' selected='selected'></option>";
+    cardHTML += "<option class='priority' id='numberOption0-" + cardId + "' selected='selected' value='0'></option>";
     for (var i = 1; i <= 10; i++) {
 
         cardHTML += "<option class='priority' id='numberOption" + i + "-" + cardId + "'>" + i +"</option>";
