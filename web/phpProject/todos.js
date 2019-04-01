@@ -86,7 +86,6 @@ function addNewTodo(bucketlistId) {
                 </div>
             </div>`;
 
-            alert(currentTodos);
             
             $(`#allTodosHolder`).html(newTodo + currentTodos);
 
