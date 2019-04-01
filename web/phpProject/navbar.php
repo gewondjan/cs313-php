@@ -5,7 +5,7 @@
         echo '<nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand" href="home.php">The Bucketlist</a>
+        <a class="navbar-brand" href="home.php">The Bucketlist App</a>
         </div>
         <ul class="nav navbar-nav">
         <li class="active"><a href="home.php">Home</a></li>&nbsp;&nbsp;

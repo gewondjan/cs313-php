@@ -157,7 +157,7 @@
 
     //Action switch statement
     switch($action) {
-        case: 'goToBucketList':
+        case 'goToBucketList':
             goToBucketlist();
             break;
         case 'signIn':
