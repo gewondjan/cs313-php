@@ -142,9 +142,24 @@
 
     }
 
+    function goToBucketlist() {
+        if (isset($SESSION['user_name'])) {
+            header("Location: bucketlist.php");
+            die();
+        } else {
+            header("Location: loginPage.php");
+            die();
+        }
+
+
+    }
+
 
     //Action switch statement
     switch($action) {
+        case: 'goToBucketList':
+            goToBucketlist();
+            break;
         case 'signIn':
             signIn();
             break;
