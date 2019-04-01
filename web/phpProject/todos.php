@@ -46,7 +46,7 @@ foreach($todos as $todo) {
 }
 //Row and column
 echo "</div></div>";
-echo "<button onclick='addNewTodo(" . $_GET['bucketlistItemId'] . ")'><i class='extra-large-icon center-button fas fa-plus-square'></i><h3>New Todo</h3></button>"
+echo "<button onclick='addNewTodo(" . $_GET['bucketlistItemId'] . ")'><h3>New Todo</h3></button>"
 
 ?>
 
