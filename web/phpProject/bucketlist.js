@@ -29,8 +29,7 @@ function getCardHTML(cardId) {
             <input type='text' id='newTitle-${cardId}' value='New Item'>
             <button class='icon-button' onclick='submitBucketlistTitle(${cardId})'><i class='fas fa-check-square'></i></button>&nbsp;&nbsp;
             <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
-            </span><br>`;
-
+            </span><br><br>`;
             
     cardHTML += "<b>Priority: </b>";
     cardHTML += "<label class='priorityLabel' for='abcPriority" + cardId + "'>A-C: </label>";
