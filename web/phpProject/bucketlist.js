@@ -29,18 +29,18 @@ function getCardHTML(cardId) {
             <input type='text' id='newTitle-${cardId}' value='New Item'>
             <button class='icon-button' onclick='submitBucketlistTitle(${cardId})'><i class='fas fa-check-square'></i></button>&nbsp;&nbsp;
             <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
-            </span><br><br>`;
+            </span>`;
             
-    cardHTML += "<b>Priority: </b>";
+    cardHTML += "<br><b>Priority: </b>";
     cardHTML += "<label class='priorityLabel' for='abcPriority" + cardId + "'>A-C: </label>";
-    cardHTML += "<select onchange='moveCard(2)' id='abcPriority" + cardId + "' class='priority prioritySelect'>";
+    cardHTML += "<select onchange='moveCard(" + cardId + ")' id='abcPriority" + cardId + "' class='priority prioritySelect'>";
     cardHTML += "<option class='priority' id='abcOption0-" + cardId + "' value='0' selected='selected'></option>";
     cardHTML += "<option class='priority' id='abcOptionA-2' value='A'>A</option>";
     cardHTML += "<option class='priority' id='abcOptionB-" + cardId + "' value='B'>B</option>";
     cardHTML += "<option class='priority' id='abcOptionC-" + cardId + "' value='C'>C</option>";
     cardHTML += "</select>&nbsp;&nbsp;";
     cardHTML += "<label class='priorityLabel' for='numberPriority" + cardId + "'>1-10: </label>";
-    cardHTML += "<select onchange='moveCard(2)' id='numberPriority" + cardId + "' class='priority prioritySelect'>";
+    cardHTML += "<select onchange='moveCard(" + cardId + ")' id='numberPriority" + cardId + "' class='priority prioritySelect'>";
     
     cardHTML += "<option class='priority' id='numberOption0-" + cardId + "' selected='selected'></option>";
     for (var i = 1; i <= 10; i++) {
