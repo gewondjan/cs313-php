@@ -31,6 +31,7 @@ function getCardHTML(cardId) {
             <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
             </span><br>`;
 
+            
     cardHTML += "<b>Priority: </b>";
     cardHTML += "<label class='priorityLabel' for='abcPriority" + cardId + "'>A-C: </label>";
     cardHTML += "<select onchange='moveCard(2)' id='abcPriority" + cardId + "' class='priority prioritySelect'>";
