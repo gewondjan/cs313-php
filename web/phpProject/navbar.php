@@ -9,7 +9,7 @@
         </div>
         <ul class="nav navbar-nav">
         <li class="active"><a href="home.php">Home</a></li>&nbsp;&nbsp;
-        <li><a href="bucketlist.php"> BucketList </a></li>&nbsp;&nbsp;
+        <li><a href="action.php?action=goToBucketList"> BucketList </a></li>&nbsp;&nbsp;
         <li><a href="loginPage.php"> Sign-In </a></li>
         </ul>
         </div>
