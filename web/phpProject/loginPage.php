@@ -33,7 +33,7 @@
 <h2>Create an Account Here: </h2>
 <form method='post' action='action.php?action=createAccount'>
 
-<label for='creatName'>Your Name: </label>
+<label for='createName'>Your Name: </label>
 <input type='text' id='createName' name='name'>
 <br>
 <label for='createEmail'>Email: </label>

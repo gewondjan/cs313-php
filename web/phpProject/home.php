@@ -17,7 +17,7 @@
 <div id='navbar'><?php showNavbar(); ?></div>
 <h1>Welcome to the Bucketlist</h1>
 <h2><i> - where all your dreams can come true!</i></h2>
-
+<a href="bucketlist.php"><button class='btn-primary'>Go to BucketList</button></a>
 
 </body>
 </html>

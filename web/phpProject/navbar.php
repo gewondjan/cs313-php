@@ -5,12 +5,11 @@
         echo '<nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
+        <a class="navbar-brand" href="home.php">The Bucketlist</a>
         </div>
         <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>&nbsp;&nbsp;
+        <li class="active"><a href="home.php">Home</a></li>&nbsp;&nbsp;
         <li><a href="bucketlist.php"> BucketList </a></li>&nbsp;&nbsp;
-        <li><a href="accomplishments.php"> Accomplishments </a></li>&nbsp;&nbsp;
         <li><a href="loginPage.php"> Sign-In </a></li>
         </ul>
         </div>
