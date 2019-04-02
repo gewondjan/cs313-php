@@ -21,7 +21,7 @@ function getCardHTML(cardId) {
     cardHTML += "<div class='card' id='" + cardId + "'>";
     cardHTML += "<div class='card-body'>";
     cardHTML += `<span id='descriptionSet-${cardId}'>
-    <a class='no-underline-link' href='todos.php?bucketlistItemId=${cardId}'><h4 class='card-title bucket-list-item' id='titleOfBucketlistItem-${cardId}'>New Item H4</h4></a>
+    <a class='no-underline-link' href='todos.php?bucketlistItemId=${cardId}'><h4 class='card-title bucket-list-item' id='titleOfBucketlistItem-${cardId}'>New Item</h4></a>
             <button class='icon-button' onclick='editBucketlistItemTitle(${cardId})'><i class='fas fa-pencil-alt'></i></button>&nbsp;&nbsp;
             <button class='icon-button' onclick='deleteBucketlistItem(${cardId})'><i class='fas fa-times'></i></button>
             </span>
