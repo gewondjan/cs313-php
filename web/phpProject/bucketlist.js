@@ -134,7 +134,7 @@ function editBucketlistItemTitle(cardId) {
     var titleText = $(`#titleOfBucketlistItem-${cardId}`).html();
     console.log(titleText);
     $(`#descriptionSet-${cardId}`).addClass("hidden");
-    console.log($(`#descriptionEdit-${cardId}`).val());  
+    console.log($(`#descriptionEdit-${cardId}`).attr("value"));  
 
     $(`#descriptionEdit-${cardId}`).removeClass("hidden");
 }
