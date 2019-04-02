@@ -5,10 +5,10 @@
         echo '<nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand" href="home.php">The Bucketlist App</a>
+        <a class="navbar-brand" href="index.php">The Bucketlist App</a>
         </div>
         <ul class="nav navbar-nav">
-        <li class="active"><a href="home.php">Home</a></li>&nbsp;&nbsp;
+        <li class="active"><a href="index.php">Home</a></li>&nbsp;&nbsp;
         <li><a href="action.php?action=goToBucketList"> BucketList </a></li>&nbsp;&nbsp;
         <li><a href="loginPage.php"> Sign-In </a></li>
         </ul>
