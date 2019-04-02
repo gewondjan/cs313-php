@@ -25,6 +25,7 @@
     $bucketlistItemTitle = $stmtForBucketListItem->fetchAll(PDO::FETCH_ASSOC);
 
 
+echo "<a href='action.php?action=goToBucketlist'>Go Back</a>";
 echo "<h1>Todos for " . $bucketlistItemTitle[0]['itemdescription'] . "</h1>";
 
 
