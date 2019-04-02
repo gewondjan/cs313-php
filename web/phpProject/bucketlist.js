@@ -132,7 +132,7 @@ function moveCard(cardId) {
 function editBucketlistItemTitle(cardId) {
     $(`#descriptionSet-${cardId}`).addClass("hidden");
     $(`#descriptionEdit-${cardId}`).removeClass("hidden");
-    $(`#descriptionEdit-${cardId}`).val($(`#titleOfBucketlistItem-${cardId}`).html());
+    $(`#descriptionEdit-${cardId}`).val("test from edit bucket list item");  //$(`#titleOfBucketlistItem-${cardId}`).html());
 }
 
 function submitBucketlistTitle(cardId) {
